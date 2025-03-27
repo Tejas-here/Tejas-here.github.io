@@ -27,7 +27,12 @@ jobs:
       run: npm run build
 
     - name: Copy files
-      run: cp * dist/
+      run:  |
+        cp -r assets dist/assets
+        cp -r authentication dist/authentication
+        cp -r html dist/html
+        cp -r img dist/img
+        cp -r src dist/src
 
     - name: Add custom domain
       run: echo 'pureayu.me' > dist/CNAME
