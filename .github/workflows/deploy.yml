@@ -29,6 +29,9 @@ jobs:
     - name: Copy index.html
       run: cp index.html dist/
 
+    - name: Add custom domain
+      run: echo 'pureayu.me' > dist/CNAME
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
