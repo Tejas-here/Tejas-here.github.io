@@ -28,6 +28,7 @@ jobs:
 
     - name: Copy files
       run:  |
+        cp -r index.html dist/
         cp -r assets dist/assets
         cp -r authentication dist/authentication
         cp -r html dist/html
