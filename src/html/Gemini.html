@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatted Gemini Response</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <h1 class="bg-red-300">saurav</h1>
+    <input type="text" id="userInput" placeholder="Enter your prompt (use Markdown)">
+    <button onclick="fetchGeminiData()">Get Response</button>
+    <div id="apiResponse"></div>
+
+    <script>
+        async function fetchGeminiData() {
+            const userInput = document.getElementById('userInput').value;
+            const apiKey = 'AIzaSyAyp3cFuWTGCXjg5wtUrQvyjinlSxqIs9A'; // Replace with your actual API key
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        contents: [{
+                            parts: [{
+                                text: userInput,
+                            }],
+                        }],
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const responseText = data.candidates[0].content.parts[0].text;
+                const formattedHtml = marked.parse(responseText); // Parse Markdown
+                document.getElementById('apiResponse').innerHTML = formattedHtml; // Display as HTML
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('apiResponse').textContent = 'Error fetching data.';
+            }
+        }
+    </script>
+</body>
+</html>
