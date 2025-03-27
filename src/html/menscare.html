@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="/src/output.css" rel="stylesheet"> </head>
+<body class="w-screen bg-[#e8e7e7]">
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4"> -->
+        <div class="md:h-[500px] bg-cover  md:bg-[url('/assets/mens.jpg')]">
+
+            
+            <nav class="bg-white md:mx-40 mx-10 h-20 flex rounded-b-3xl">
+                <div><img class="mx-6 my-4 md:h-10 h-8" src="/img/icon_ayu/New folder (2)/Logo (1).png" alt=""></div>
+                <ul class=" m-5  md:flex hidden">
+                  <a href="#"><li class="mr-10 font-normal text-lg  ">Home</li></a>
+                  <a href="/src/html/about.html"><li class="mr-10 font-normal text-lg  ">About</li></a>
+                  <a href="/src/html/Shop.html"><li class="mr-10 font-normal text-lg  ">Shop</li></a>
+                  <a href="/src/html/Diseases.html"><li class="mr-10 font-normal text-lg  ">Diseases</li></a>
+                  <a href="/src/html/contact.html"><li class="mr-10 font-normal text-lg  ">Contact</li></a>
+                  <a href="/src/html/AI.html"><li class="mr-10 font-normal text-lg  ">AI</li></a>
+                  
+                </ul>
+              </nav>
+              
+              <h1 class="text-white font-bold text-3xl absolute top-56 right-[650px]">MENS CARE</h1>
+              <div>
+                
+    
+              </div>
+        </div>
+        
+        <h1 class=" block md:hidden text-center text-3xl m-4 font-bold">MENS CARE</h1>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="container" class="bg-white"></div>
+        </div>
+
+
+        <footer class="bg-[#1a0a06] text-white py-10 px-5 md:px-20">
+            <div class="max-w-7xl mx-auto">
+              <!-- Upper Section -->
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <!-- Subscription Form -->
+                <div class="mb-6 md:mb-0">
+                  <h2 class="text-lg font-semibold">Sign Up To Get Updates & News About Us..</h2>
+                  <div class="mt-3 flex">
+                    <input type="email" placeholder="Enter Your Email.." class="px-4 py-2 rounded-l-lg text-black w-60 md:w-80 focus:outline-none" />
+                    <button class="bg-[#b66d42] px-4 py-2 rounded-r-lg text-white font-semibold hover:bg-[#a45a35]">Subscribe</button>
+                  </div>
+                </div>
+          
+                <!-- Footer Info -->
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16 mt-6 md:mt-0">
+                  <!-- About -->
+                  <div>
+                    <h3 class="text-lg font-semibold flex items-center">
+                      <img src="your-logo-path.png" alt="Logo" class="h-6 w-6 mr-2">
+                      <span class="text-[#b66d42]">Pure Ayurveda</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-2">
+                      met minim mollit non deserunt ullamco est sit Velit officia consequat duis enim velit mollit. sunt nost
+                    </p>
+                  </div>
+          
+                  <!-- Useful Links -->
+                  <div>
+                    <h3 class="text-lg font-semibold">Useful Links</h3>
+                    <ul class="text-gray-400 mt-2 space-y-1">
+                      <li><a href="#" class="hover:text-[#b66d42]">Shipping Option</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">My Wishlist</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">My Account</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">Return Policy</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">Shopping FAQs</a></li>
+                    </ul>
+                  </div>
+          
+                  <!-- Contact Info -->
+                  <div>
+                    <h3 class="text-lg font-semibold">Contact Info</h3>
+                    <ul class="text-gray-400 mt-2 space-y-1">
+                      <li class="flex items-center">
+                        <span class="mr-2">📍</span> 4517 Washington Ave. Manchester, 39495
+                      </li>
+                      <li class="flex items-center">
+                        <span class="mr-2">📞</span> (208) 555-0112
+                      </li>
+                      <li class="flex items-center">
+                        <span class="mr-2">📧</span> example@gmail.com
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Copyright -->
+              <div class="text-center text-gray-400 mt-8 border-t border-gray-700 pt-4">
+                Copyright &copy; 2024. All Rights Reserved. <span class="text-[#b66d42]">Pure Ayurveda</span>
+              </div>
+            </div>
+          </footer>
+</body>
+<script>
+    const data = [
+    {
+    title: "Maintain a Healthy Diet",
+    image: "./project image/project image/Maintain a healthy diet.png",
+    description: "Reduce Risk of Chronic Diseases",
+    prevention: "A healthy diet helps prevent heart disease, type 2 diabetes, and certain cancers. It also supports weight management and boosts your immune system. Smart food choices are key to a healthier life."
+  },
+  {
+    title: "Engage in Regular Exercise",
+    image: "./project image/project image/Engage in Regular Exercise.png",
+    description: "Improve Physical and Mental Well-being",
+    prevention: "Exercise strengthens muscles and bones, improves cardiovascular health, and boosts mood. It can also help reduce stress, anxiety, and the risk of depression. Find activities you enjoy and stick with them."
+  },
+  {
+    title: "Prioritize Quality Sleep",
+    image: "./project image/project image/Prioritize Quality Sleep.png",
+    description: "Enhance Cognitive Function and Mood",
+    prevention: "Adequate sleep improves focus, concentration, and memory. It also plays a crucial role in regulating mood and emotions. Make sleep a priority for optimal health and well-being."
+  },
+  {
+    title: "Manage Stress Effectively",
+    image: "./project image/project image/Manage Stress Effectively.png",
+    description: "Reduce Risk of Stress-Related Illnesses",
+    prevention: "Effective stress management can help lower your risk of heart disease, high blood pressure, and other stress-related illnesses. It also improves emotional well-being and resilience."
+  },
+  {
+    title: "Stay Hydrated",
+    image: "./project image/project image/Stay Hydrated.png",
+    description: "Support Optimal Bodily Functions",
+    prevention: "Proper hydration is crucial for maintaining healthy skin, supporting digestion, and boosting energy levels. Carry a water bottle with you and make a conscious effort to drink throughout the day."
+  },
+  {
+    title: "Practice Good Hygiene",
+    image: "./project image/project image/Practice Good Hygiene.png",
+    description: "Prevent Infections and Promote Overall Health",
+    prevention: "Good hygiene practices are essential for staying healthy and preventing illnesses. Brush your teeth twice a day, floss daily, and visit your dentist for regular checkups."
+  },
+  {
+    title: "Protect Your Skin",
+    image: "./project image/project image/Protect Your Skin.png",
+    description: "Reduce Risk of Skin Cancer and Premature Aging",
+    prevention: "Sun protection is crucial for preventing skin cancer and premature aging. It also helps maintain healthy and youthful-looking skin. Make sunscreen a part of your daily routine."
+  },
+  {
+    title: "Limit Alcohol Consumption",
+    image: "./project image/project image/Limit Alcohol Consumption.png",
+    description: "Reduce Risk of Alcohol-Related Health Issues",
+    prevention: "Limiting alcohol consumption or abstaining altogether is beneficial for overall health. It supports liver function, reduces the risk of chronic diseases, and improves mental clarity."
+  },
+  {
+    title: "Quit Smoking",
+    image: "./project image/project image/Quit Smoking.png",
+    description: "Improve Lung Health and Reduce Disease Risk",
+    prevention: "Quitting smoking is one of the best things you can do for your health. It improves lung function, reduces the risk of various diseases, and enhances overall quality of life."
+  },
+  {
+    title: "Get Regular Checkups",
+    image: "./project image/project image/Get Regular Checkup.png",
+    description: "Early Detection and Prevention",
+    prevention: "Regular checkups allow your doctor to monitor your health, identify potential problems early on, and provide preventive care. This helps you stay healthy and proactive about your well-being."
+  },
+    {
+    title: "Maintain a Healthy Weight",
+    image: "./project image/project image/Maintain a Healthy Weight.png",
+    description: "Reduce Risk of Chronic Diseases",
+    prevention: "A healthy weight reduces the risk of heart disease, type 2 diabetes, certain cancers, and other health issues. It also improves energy levels and overall well-being."
+  },
+  {
+    title: "Manage Blood Pressure",
+    image: "./project image/project image/Manage Blood Pressure.png",
+    description: "Reduce Risk of Cardiovascular Disease",
+    prevention: "Managing blood pressure through lifestyle changes and medication, if necessary, is crucial for preventing heart disease, stroke, and other cardiovascular problems."
+  },
+  {
+    title: "Control Cholesterol",
+    image: "./project image/project image/Control Cholesterol.png",
+    description: "Protect Heart Health",
+    prevention: "Managing cholesterol levels is important for preventing plaque buildup in arteries and reducing the risk of heart attack and stroke."
+  },
+  {
+        title: "Manage Blood Sugar",
+        image: "./project image/project image/Manage Blood Sugar.png",
+        description: "If you have diabetes or are at risk, manage your blood sugar levels through diet, exercise, and medication as prescribed by your doctor.",
+        prevention: "Controlling blood sugar is essential for preventing complications of diabetes, such as nerve damage, kidney disease, and eye problems."
+    },
+    {
+        title: "Get Vaccinated",
+        image: "./project image/project image/Get Vaccinated.png",
+        description: "Stay up-to-date on recommended vaccinations to protect yourself from preventable diseases. Vaccinations are safe and effective.",
+        prevention: "Vaccinations help your immune system build immunity to specific diseases, preventing you from getting sick and spreading infections to others."
+    },
+    {
+        title: "Maintain Oral Hygiene",
+        image: "./project image/project image/Maintain Oral Hygiene.png",
+        description: "Brush your teeth twice a day, floss daily, and visit your dentist for regular checkups. Good oral hygiene is essential for overall health.",
+        prevention: "Good oral hygiene helps prevent gum disease, tooth decay, and other oral health problems. It also contributes to fresh breath and overall well-being."
+    },
+    {
+        title: "Protect Your Hearing",
+        image: "./project image/project image/Protect Your Hearing.png",
+        description: "Avoid exposure to loud noises and wear ear protection when necessary. Loud noise can damage your hearing over time.",
+        prevention: "Protecting your hearing is crucial for preventing hearing loss and maintaining good communication throughout your life."
+    },
+    {
+        title: "Take Care of Your Eyes",
+        image: "./project image/project image/take Care of Your Eyes.png",
+        description: "Get regular eye exams and wear sunglasses to protect your eyes from harmful UV rays. Good eye health is essential for vision and overall well-being.",
+        prevention: "Regular eye exams can detect eye diseases early on, allowing for timely treatment and preventing vision loss. Protecting your eyes from the sun is also important."
+    },
+    {
+        title: "Maintain Mental Wellness",
+        image: "./project image/project image/Maintain Mental Wellness.png",
+        description: "Prioritize your mental wellness by managing stress, getting enough sleep, and engaging in activities you enjoy. Seek help if you're struggling.",
+        prevention: "Mental wellness is just as important as physical health. Taking care of your mental well-being improves mood, reduces stress, and enhances cognitive function."
+    },
+    {
+        title: "Practice Mindfulness",
+        image: "./project image/project image/practice mindfulness.png",
+        description: "Incorporate mindfulness practices such as meditation, deep breathing, or yoga into your daily routine. Mindfulness helps reduce stress and improve overall well-being.",
+        prevention: "Mindfulness techniques promote relaxation, improve focus, and reduce symptoms of anxiety and depression. Practice regularly for better emotional health."
+    },
+    {
+        title: "Limit Caffeine Intake",
+        image: "./project image/project image/Limit Caffeine Intake.png",
+        description: "While caffeine can boost energy, excessive consumption may lead to anxiety, insomnia, and digestive issues. Stick to moderate amounts to avoid negative effects.",
+        prevention: "Limiting caffeine intake can help regulate sleep patterns, reduce jitters, and support overall nervous system health."
+    },
+    {
+        title: "Eat More Fiber",
+        image: "./project image/project image/eat more fiber.png",
+        description: "Increase your intake of fiber-rich foods such as fruits, vegetables, whole grains, and legumes. Fiber supports digestion and promotes gut health.",
+        prevention: "A high-fiber diet aids digestion, prevents constipation, and reduces the risk of heart disease by helping to lower cholesterol levels."
+    },
+    {
+        title: "Strengthen Your Immune System",
+        image: "./project image/project image/Strengthen Your Immune System.png",
+        description: "Support your immune system by consuming nutrient-rich foods, getting adequate sleep, staying active, and managing stress levels effectively.",
+        prevention: "A strong immune system helps protect against infections and chronic diseases. Healthy lifestyle habits play a key role in maintaining immunity."
+    },
+    {
+        title: "Take Breaks from Screens",
+        image: "./project image/project image/Take Breaks from Screens.png",
+        description: "Excessive screen time can strain your eyes and impact mental health. Take regular breaks, follow the 20-20-20 rule, and limit screen exposure before bedtime.",
+        prevention: "Reducing screen time can prevent digital eye strain, improve focus, and contribute to better sleep quality."
+    },
+    {
+        title: "Practice Deep Breathing",
+        image: "./project image/project image/Practice Deep Breathing.png",
+        description: "Engage in deep breathing exercises to promote relaxation, reduce stress, and improve oxygen flow to the brain and body.",
+        prevention: "Deep breathing helps lower blood pressure, improves lung capacity, and induces a state of calm and relaxation."
+    },
+    {
+        title: "Stay Socially Connected",
+        image: "./project image/project image/Stay Socially Connected.png",
+        description: "Maintaining strong social relationships is essential for emotional well-being. Spend quality time with family, friends, and loved ones.",
+        prevention: "Social connections help reduce stress, improve mood, and lower the risk of mental health issues such as depression and anxiety."
+    },
+    {
+        title: "Incorporate Strength Training",
+        image: "./project image/project image/incorporate strength training.png",
+        description: "Engage in strength training exercises at least twice a week to build muscle, improve metabolism, and support bone health.",
+        prevention: "Strength training enhances muscle tone, reduces injury risk, and helps prevent osteoporosis as you age."
+    },
+    {
+        title: "Improve Posture",
+        image: "./project image/project image/Improve Posture.png",
+        description: "Poor posture can lead to back pain, tension headaches, and reduced mobility. Be mindful of your posture while sitting, standing, and walking.",
+        prevention: "Practicing good posture reduces strain on muscles and joints, preventing chronic pain and improving overall body alignment."
+    },
+    {
+        title: "Reduce Sugar Intake",
+        image: "./project image/project image/Reduce Sugar Intake.png",
+        description: "Excess sugar consumption can contribute to obesity, diabetes, and heart disease. Opt for natural sweeteners and whole foods instead.",
+        prevention: "Lowering sugar intake supports healthy weight management, stabilizes blood sugar levels, and improves overall well-being."
+    },
+    {
+        title: "Get Enough Sunlight",
+        image: "./project image/project image/Get Enough Sunlight.png",
+        description: "Sunlight exposure helps the body produce vitamin D, which is essential for bone health, immunity, and mood regulation.",
+        prevention: "Regular sun exposure enhances mood, supports bone strength, and prevents vitamin D deficiency-related health issues."
+    },
+    {
+        title: "Cook More at Home",
+        image: "./project image/project image/Cook More at Home.png",
+        description: "Preparing meals at home allows you to control ingredients, make healthier choices, and avoid excess salt, sugar, and unhealthy fats.",
+        prevention: "Home-cooked meals are generally healthier, cost-effective, and contribute to better eating habits and long-term health."
+    },
+    {
+        title: "Practice Gratitude",
+        image: "./project image/project image/Practice Gratitude.png",
+        description: "Take time each day to reflect on things you’re grateful for. Gratitude helps shift focus toward positivity and improves overall happiness.",
+        prevention: "Practicing gratitude increases optimism, reduces stress, and fosters a greater sense of life satisfaction."
+    },
+    {
+        title: "Protect Your Joints",
+        image: "./project image/project image/Protect Your Joints.png",
+        description: "Take care of your joints by staying active, maintaining a healthy weight, and incorporating low-impact exercises like swimming and yoga.",
+        prevention: "Strong and flexible joints help prevent arthritis and reduce discomfort associated with aging or physical activity."
+    },
+    {
+        title: "Limit Processed Foods",
+        image: "./project image/project image/Limit Processed Foods.png",
+        description: "Processed foods are often high in unhealthy fats, sugar, and sodium. Focus on whole, natural foods for better health.",
+        prevention: "Reducing processed food intake supports digestion, weight management, and long-term disease prevention."
+    },
+    {
+        title: "Listen to Your Body",
+        image: "./project image/project image/Listen to Your Body.png",
+        description: "Pay attention to your body’s signals, whether it’s hunger, fatigue, pain, or stress. Responding appropriately helps maintain good health.",
+        prevention: "Listening to your body allows for better self-care, preventing exhaustion, injury, and stress-related illnesses."
+    },
+    {
+        title: "Encourage Healthy Sleep Habits in Children",
+        image: "./project image/project image/Encourage Healthy Sleep Habits in Children.png",
+        description: "Ensure children develop good sleep routines by setting consistent bedtimes and limiting screen time before bed.",
+        prevention: "Quality sleep is essential for children’s physical growth, emotional stability, and academic performance."
+    },
+    {
+        title: "Use Natural Cleaning Products",
+        image: "./project image/project image/Use Natural Cleaning Products.png",
+        description: "Switch to natural cleaning products to reduce exposure to harmful chemicals that can affect respiratory and skin health.",
+        prevention: "Using eco-friendly, chemical-free products minimizes toxins in the home, supporting better overall health."
+    },
+    {
+        title: "Stay Curious and Keep Learning",
+        image: "./project image/project image/Stay Curious and Keep Learning.png",
+        description: "Continuing to learn new skills and knowledge can enhance brain function, boost self-confidence, and support personal growth.",
+        prevention: "Lifelong learning improves cognitive function, mental flexibility, and emotional well-being at any age."
+    }
+];
+
+const container = document.getElementById("container");
+container.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 md:m-20 m-4 gap-6 ";
+container.innerHTML = "";
+
+data.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "bg-white p-4 rounded-2xl";
+    
+    card.innerHTML = `
+        <div class=" p-4 rounded-2xl">
+            <div class="flex  ">
+                <img class="aspect-square h-40 w-40 mr-4 hover:scale-105 transition-all duration-100 ease-in-out rounded-2xl" src="${item.image}" alt="">
+                
+                    
+                   
+                    <div>
+<p class="text-2xl font-bold">Prevention</p>
+                <p>${item.prevention}</p>
+                        </div>
+
+                        
+                </div>
+            </div>
+            <div class="mt-4">
+                <h1 class="font-bold text-2xl">${item.title}</h1>
+                    <p>${item.description}</p>
+            </div>
+        </div>
+
+    `;
+    
+    container.appendChild(card);
+});
+</script>
+</html>

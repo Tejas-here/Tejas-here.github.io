@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/src/output.css">
+</head>
+<body class="text-black bg-[url('/assets/banner-bg.png')] ">
+    <div class="h-screen   w-screen">
+        <nav class="bg-white md:mx-40 mx-10 h-20 flex rounded-b-3xl">
+            <div><img class="mx-6 my-4 md:h-10 h-8" src="/img/icon_ayu/New folder (2)/Logo (1).png" alt=""></div>
+            <div class="ml-auto">
+                <ul class=" ml-auto m-5  md:flex hidden">
+                    <a href="./index.html"><li class="mr-10 font-normal text-lg  ">Home</li></a>
+                    <a href="./about.html"><li class="mr-10 font-normal text-lg  ">About</li></a>
+                    <a href="./Shop.html"><li class="mr-10 font-normal text-lg  ">Shop</li></a>
+                    <a href="./Diseases.html"><li class="mr-10 font-normal text-lg  ">Diseases</li></a>
+                    <a href="./contact.html"><li class="mr-10 font-normal text-lg  ">Contact</li></a>
+                    <a href="https://pure-aayu-ai.netlify.app/"><li class="mr-10 font-normal text-lg  ">AI</li></a>
+                    
+                  </ul>
+            
+              </div>
+          </nav>
+        
+    <div class=" flex items-center min-h-screen ">
+        <div class="container mx-auto">
+            
+                <div class="text-center">
+                    <h1 class="my-3 text-3xl font-semibold text-black ">
+                        Contact Us
+                    </h1>
+                    <p class="text-black">
+                        Fill up the form below to send us a message.
+                    </p>
+                </div>
+                <div class="md:mx-40 mx-10  ">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                        <input type="hidden" name="access_key" value="8493d47f-9bc9-433d-9be6-8d3c57c14b8e" />
+                        <input type="hidden" name="subject" value="New Submission from your Website" />
+                        <input type="checkbox" name="botcheck" id="" style="display: none;" />
+        
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 text-sm ">Full Name</label>
+                            <input type="text" name="name" id="name" placeholder="John Doe" required class="w-full px-3 py-2 text-black border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300    dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 text-sm ">Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="you@company.com" required class="w-full px-3 py-2 text-black border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300    dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="text-sm ">Phone Number</label>
+                            <input type="number"  maxlength="10"  pattern="\d{10}"
+                            oninput="this.value = this.value.replace(/\D/g, '').slice(0, 10)" 
+                              required="phone" name="phone" id="phone" placeholder="+1 (555) 1234-567" required class="w-full px-3 py-2 text-black border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300    dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 text-sm ">Your Message</label>
+        
+                            <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300    dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+                        </div>
+                        <div class="mb-6">
+                            <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
+                                Send Message
+                            </button>
+                        </div>
+                        <p class="text-base text-center text-gray-500" id="result"></p>
+                    </form>
+                </div>
+            
+          </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+    
+    form.addEventListener('submit', function(e) {
+        const formData = new FormData(form);
+        e.preventDefault();
+    
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        result.innerHTML = "Please wait..."
+    
+        fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+              let json = await response.json();
+              if (response.status == 200) {
+                result.innerHTML = json.message;
+                result.classList.remove("text-gray-500");
+                result.classList.add("text-green-500");
+              } else {
+                console.log(response);
+                result.innerHTML = json.message;
+                result.classList.remove("text-gray-500");
+                result.classList.add("text-red-500");
+              }
+            })
+            .catch((error) => {
+              console.log(error);
+              result.innerHTML = "Something went wrong!";
+            })
+            .then(function() {
+                form.reset();
+                setTimeout(() => {
+                    result.style.display = "none";
+                }, 3000);
+            });
+    });
+    </script>
+</html>

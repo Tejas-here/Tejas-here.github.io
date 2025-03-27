@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pure-ayu-main/src/output.css">
+    <link rel="stylesheet" href="/src/output.css">
+    <title>Dynamic Content</title>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+  
+  <nav class="bg-white md:mx-20 absolute top-0  mx-10 md:left-60 h-20 flex rounded-b-3xl space-between shadow-xl z-50     ">
+    <div><img class="mx-6 my-4 md:h-10 h-8" src="/img/icon_ayu/New folder (2)/Logo (1).png" alt=""></div>
+    <div class="ml-72">
+      <ul class=" m-5  md:flex hidden">
+          <a href="./index.html"><li class="mr-10 font-normal text-lg  ">Home</li></a>
+          <a href="./about.html"><li class="mr-10 font-normal text-lg  ">About</li></a>
+          <a href="./Shop.html"><li class="mr-10 font-normal text-lg  ">Shop</li></a>
+          <a href="./Diseases.html"><li class="mr-10 font-normal text-lg  ">Diseases</li></a>
+          <a href="./contact.html"><li class="mr-10 font-normal text-lg  ">Contact</li></a>
+          <a href="https://pure-aayu-ai.netlify.app/"><li class="mr-10 font-normal text-lg  ">AI</li></a>
+          <img src="./" alt="">
+        </ul>
+  
+    </div>
+     
+    
+  </nav>
+    
+    <input  type="text" id="search" placeholder="Search diseases..." class="mb-6 p-2 border border-gray-300 rounded-md w-1/2 mt-40">
+    <!-- <img src="./diseasesimg/diseasesimg/Ecezema.png" alt=""> -->
+    <div id="container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    <div class="w-screen">
+      <footer class="bg-[url('/assets/footer.png')] bg- text-white py-10 px-6 mt-40">
+        <!-- <img src="assets/footer.png" alt=""> -->
+        <div class="max-w-6xl mx-auto ">
+            <!-- Top Section -->
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-6">
+                <h2 class="text-xl font-bold text-center md:text-left">Sign Up To Get Updates & News About Us..</h2>
+                <!-- <div class="flex mt-4 md:mt-0">
+                    <input type="email" placeholder="Enter Your Email.." class="px-4 py-2 rounded-l-full w-64 text-black focus:outline-none">
+                    <button class="bg-brown-700 px-4 py-2 rounded-r-full text-white font-medium">Subscribe</button>
+                </div> -->
+            </div>
+      
+            <!-- Bottom Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+                <!-- About -->
+                <div>
+                    <h3 class="text-lg font-semibold">Pure Ayurveda</h3>
+                    <p class="mt-2 text-gray-400">met minim mollit non deserunt ullamco est sit Velit officia consequat duis enim velit mollit. sunt nost</p>
+                </div>
+      
+                <!-- Useful Links -->
+                <div>
+                    <h3 class="text-lg font-semibold">Useful Links</h3>
+                    <ul class="mt-2 space-y-2 text-gray-400">
+                        <li>Shipping Option</li>
+                        <li>My Wishlist</li>
+                        <li>My Account</li>
+                        <li>Return Policy</li>
+                        <li>Shopping FAQs</li>
+                    </ul>
+                </div>
+      
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-lg font-semibold">Contact Info</h3>
+                    <ul class="mt-2 space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            📍 4517 Washington Ave. Manchester, 39495
+                        </li>
+                        <li class="flex items-center">
+                            📞 (208) 555-0112
+                        </li>
+                        <li class="flex items-center">
+                            ✉️ example@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+      
+            <!-- Copyright -->
+            <div class="text-center text-gray-400 mt-6 border-t border-gray-600 pt-4">
+                Copyright © 2024. All Right Reserved. Pure Ayurveda
+            </div>
+        </div>
+      </footer>
+    </div>
+    <script>
+        const items = [
+        {
+                title: "Eczema",
+                image: "./diseasesimg/diseasesimg/Ecezema.png", 
+                description: "Non-contagious inflammatory skin disease.",
+                subtitle: "Herbal Medicines Treatment",
+                subdescription: "Correct food habits and clean the system.",
+                
+            },
+            {
+                title: "Roga-Hetu Disease",
+                image: "./diseasesimg/diseasesimg/Roga Hetu.png",
+                description: "Understanding the concepts of Roga & Hetu can lead to a healthy lifestyle.",
+                subtitle: "Nidana Parivarjana",
+                subdescription: "Avoid causative factors (Roga Hetu) like poor diet, stress, and lifestyle imbalances."
+            },
+            {
+                title: "Skin Disease",
+                image: "./diseasesimg/diseasesimg/Skin Diseases.png",
+                description: "Skin diseases arise from an imbalance in doshas due to unhealthy diet and lifestyle.",
+                subtitle: "Ayurvedic Facials",
+                subdescription: "Herbal treatments can be used to treat skin issues."
+            },
+            {
+                title: "Psychological Disease",
+                image: "./diseasesimg/diseasesimg/Psychosis.png",
+                description: "Mental health disorders affect thinking, mood, and behavior.",
+                subtitle: "Herbal Remedies",
+                subdescription: "Herbs like Brahmi, Ashwagandha, and Guggulu help nourish the nervous system."
+            },
+            {
+                title: "Diabetes Disease",
+                image: "./diseasesimg/diseasesimg/Diabities.png",
+                description: "Diabetes (Madhumeh) affects millions worldwide, making life challenging.",
+                subtitle: "Herbal Medication",
+                subdescription: "Herbs like Jamun, Karela, and Gudmar help regulate blood sugar levels."
+            },
+            {
+                title: "Arthritis Disease",
+                image: "./diseasesimg/diseasesimg/Arthists.png",
+                description: "Arthritis affects muscles, bones, and joints, impacting mobility and comfort.",
+                subtitle: "Scans and Tests",
+                subdescription: "Blood tests check for inflammation markers and genetic predisposition."
+            },
+            {
+                title: "Anxiety Disease",
+                image: "./diseasesimg/diseasesimg/Anxiety.png",
+                description: "Panic attacks and anxiety disorders can disrupt daily life.",
+                subtitle: "Ayurvedic Herbs",
+                subdescription: "Ashwagandha, Brahmi, and Shankhapushpi help calm the mind."
+            },
+            {
+                title: "Fever Disease",
+                image: "./diseasesimg/diseasesimg/Fever.png",
+                description: "Fever is a common symptom of infections and other conditions.",
+                subtitle: "Prevention Tips",
+                subdescription: "Maintain hygiene, boost immunity, and stay hydrated."
+            },
+            {
+                title: "Hypertension",
+                image: "./diseasesimg/diseasesimg/hypertention.png",
+                description: "High blood pressure can lead to serious health issues.",
+                subtitle: "Prevention of Hypertension",
+                subdescription: "Ayurveda recommends diet changes, yoga, and herbs like Arjuna."
+            },
+            {
+                title: "Asthma",
+                image: "./diseasesimg/diseasesimg/Asthma.png",
+                description: "Asthma causes wheezing, breathlessness, and coughing.",
+                subtitle: "Prevention of Asthma",
+                subdescription: "Avoid allergens, practice pranayama, and use Tulsi & Vasa herbs."
+            },
+            {
+                title: "Digestive Disorders",
+                image: "./diseasesimg/diseasesimg/digestive disorders.png",
+                description: "Digestive issues affect nutrient absorption and gut health.",
+                subtitle: "Ayurvedic Approach",
+                subdescription: "Eat a fiber-rich diet, stay hydrated, and consume herbal teas."
+            },
+            {
+                title: "Heart Disease",
+                image: "./diseasesimg/diseasesimg/Heart.png",
+                description: "Heart diseases are linked to imbalances in Kapha and Pitta doshas.",
+                subtitle: "Heart-Healthy Diet",
+                subdescription: "Eat whole grains, fresh fruits, and light, easy-to-digest foods."
+            },
+            {
+                title: "High Blood Pressure",
+                image: "./diseasesimg/diseasesimg/high blood presure.png",
+                description: "Ayurveda focuses on lifestyle changes and herbal remedies.",
+                subtitle: "Panchakarma Therapy",
+                subdescription: "Detoxification using Abhyanga, Virechana, and Shirodhara."
+            },
+            {
+                title: "High Cholesterol",
+                image: "./diseasesimg/diseasesimg/High Cholestrol.png",
+                description: "High cholesterol leads to arterial plaque buildup.",
+                subtitle: "Ayurvedic Medicine",
+                subdescription: "Herbs like garlic, guggul, and arjuna lower cholesterol."
+            },
+            {
+                title: "Rheumatoid Arthritis",
+                image: "./diseasesimg/diseasesimg/Rheumatoid Arthristis.png",
+                description: "An autoimmune disorder causing joint inflammation and pain.",
+                subtitle: "Detoxification Procedures",
+                subdescription: "Panchakarma therapy helps cleanse and detoxify the body."
+            },
+            {
+                title: "Weight Loss",
+                image: "./diseasesimg/diseasesimg/Weight Loss.png",
+                description: "Obesity is a growing concern, impacting health and well-being.",
+                subtitle: "Triphala Medicine",
+                subdescription: "A mix of three fruits that aids digestion and metabolism."
+            },
+            {
+                title: "Sleep Problems",
+                image: "./diseasesimg/diseasesimg/Sleep.png",
+                description: "Insomnia and sleep disorders affect mental and physical health.",
+                subtitle: "Herbal Teas",
+                subdescription: "Chamomile, lavender, and passionflower teas promote sleep."
+            },
+            {
+                title: "Osteoarthritis",
+                image: "./diseasesimg/diseasesimg/osteoarthritiswd.png",
+                description: "Osteoarthritis affects joint flexibility and mobility.",
+                subtitle: "Cow Urine Therapy",
+                subdescription: "Cow urine and Ayurvedic herbs can help rejuvenate body defects."
+            },
+            {
+                title: "Prostate Cancer",
+                image: "./diseasesimg/diseasesimg/Prostate Cancer.png",
+                description: "Affects the prostate gland, common in older men.",
+                subtitle: "Jain’s Cow Urine Therapy",
+                subdescription: "Helps regulate urinary function and detoxifies the body."
+            },
+            {
+                title: "Endocrine Disorders",
+                image: "./diseasesimg/diseasesimg/Endocrine.png",
+                description: "Hormonal imbalances can impact overall health and well-being.",
+                subtitle: "Toxins & Pesticides",
+                subdescription: "Reducing toxin exposure can improve hormone balance."
+            },
+            {
+                title: "Accelerated Aging",
+                image: "./diseasesimg/diseasesimg/accelerating aging.png",
+                description: "Aging leads to cellular damage and functional decline.",
+                subtitle: "Topical Agents",
+                subdescription: "Vitamins A, C, E, and hyaluronic acid help slow aging."
+            },
+            {
+                title: "Migraine",
+                image: "./diseasesimg/diseasesimg/Migraine.png",
+                description: "Migraines cause severe headaches and discomfort.",
+                subtitle: "Turmeric",
+                subdescription: "Curcumin reduces inflammation linked to migraines."
+            },
+            {
+                title: "Memory Loss",
+                image: "./diseasesimg/diseasesimg/Memory Loss.png",
+                description: "Memory decline is linked to neuron degeneration.",
+                subtitle: "Cow Urine Therapy",
+                subdescription: "Herbs like Brahmi and Ashwagandha improve cognitive function."
+            },
+            {
+    "title": "Constipation Disorder",
+    "image": "./diseasesimg/diseasesimg/Constipation2.png",
+    "description": "Constipation is a condition in which you may have fewer than three bowel movements a week; stools that are hard, dry, or lumpy; stools that are difficult or painful to pass; or a feeling that not all stool has passed.",
+    "subtitle": "Therapeutic whole-body massage with medicated oils",
+    "subdescription": "Ayurveda includes therapeutic whole-body massage with medicated oils both as a regular health practice and as preparation for Panchakarma cleanses. Research shows that abdominal massage and deeper colon massage therapies can help relieve constipation effectively."
+  },
+  {
+    "title": "Pancreatitis Disease",
+    "image": "./diseasesimg/diseasesimg/Prancratitisw.png",
+    "description": "In Ayurveda, chronic pancreatitis can be correlated with \"Pittaja Gulma,\" where Pitta dosha aggravation leads to the formation of a mass or tumor-like structure in the pancreas. This condition disrupts the normal functioning of the pancreas, impacting digestion, metabolism, and overall health.",
+    "subtitle": "Diluted buttermilk (Lassi)",
+    "subdescription": "Diluted buttermilk (Lassi) and Indian gooseberry (amla) are the choicest foods for Chronic Pancreatitis in Ayurveda. Lassi can be made by mixing 10 ml of curd in 50 ml of water. Cumin powder and salt can be added to taste. Taking curd alone is not good."
+  },
+  {
+    "title": "Agnimandya (Indigestion)",
+    "image": "./diseasesimg/diseasesimg/Agnimandya.png",
+    "description": "The word 'Agnimandya' in its of itself signifies the state of inadequate process of digestion on ingested food. In Ayurveda there is a concept called Ama, which is considered as the main reason for majority of the diseases. Ama is a toxic substance formed due to Ajirna.",
+    "subtitle": "Agni karma",
+    "subdescription": "Agni karma, also known as 'dahan karma', is a process used in Ayurveda for various benign diseases that are characterised by pain or bleeding. In this process, the heated rods of gold, silver, iron, copper and pancha dhatu (five metals) are applied directly on the skin at the affected site."
+  },
+  {
+    "title": "Muscular dystrophy",
+    "image": "./diseasesimg/diseasesimg/Muscular.png",
+    "description": "Ayurveda treats muscular dystrophy (MD) as an imbalance of Vata dosha and Sapta Dhatus, which are the seven essential elements that make up the body. Ayurveda treatments can help improve muscle function and quality of life, but they can't cure the disease.",
+    "subtitle": "Panchakarma treatments",
+    "subdescription": "Panchakarma treatments like Abhyanga (a soothing oil massage) and Navarakizhi (warm rice poultice therapy) are designed to relax stiff muscles and improve circulation. These therapies are tailored to each individual and aim to leave you feeling lighter and more mobile."
+  },
+  {
+    "title": "Ajirna (Dyspepsia)",
+    "image": "./diseasesimg/diseasesimg/Ajrina.png",
+    "description": "The word ‘Ajirna’ in its of itself signifies the state of incomplete process of digestion on ingested food. The main reason for indigestion is agnimandya (weakened digestive fire).",
+    "subtitle": "Ayurvedic Treatment",
+    "subdescription": "Water medicated with dry ginger, coriander seeds, musta can be of good help. Warm lime water should be taken with few drops of ginger juice & a pinch of pepper powder."
+  },
+  {
+    "title": "Atisara (Diarrhea)",
+    "image": "./diseasesimg/diseasesimg/Atisara.png",
+    "description": "This condition is termed as Atisara in Ayurveda. Diarrhoea could be caused by any of the following: intake of foods of any particular quality in excess; foods incompatible with your prakriti or with seasonal variations; intake of foods that are not well cooked; contaminated water or other beverages etc.",
+    "subtitle": "Ayurvedic Treatment",
+    "subdescription": "Diarrhea usually clears up quickly without treatment. To help you cope with your symptoms until the diarrhea goes away, try to do the following: Drink plenty of liquids, including water, broths and juices. Avoid caffeine and alcohol."
+  },
+  {
+    "title": "Grahani (Malabsorption Syndrome)",
+    "image": "./diseasesimg/diseasesimg/Grahani1.png",
+    "description": "Grahani, in Ayurvedic medicine, refers to a condition characterized by impaired digestion and absorption of nutrients. It's often correlated with Malabsorption Syndrome in modern medicine, although the Ayurvedic understanding is broader, encompassing various digestive and metabolic imbalances.",
+    "subtitle": "Understanding Grahani in Ayurveda",
+    "subdescription": "Grahani is considered a disorder of 'Agni' (digestive fire). When Agni is weakened, it leads to incomplete digestion, resulting in the formation of 'Ama' (undigested food residue), which further aggravates the condition."
+  },
+  {
+    "title": "Arsha (Hemorrhoids)",
+    "image": "./diseasesimg/diseasesimg/arsha1.png",
+    "description": "Arsha, known as hemorrhoids in modern medicine, refers to swollen veins in the anus and rectum that can cause pain, itching, and bleeding. Ayurveda classifies Arsha based on the doshic predominance (Vata, Pitta, Kapha) and describes various types.",
+    "subtitle": "Understanding Arsha in Ayurveda",
+    "subdescription": "Ayurveda attributes Arsha to impaired digestion, weakened Agni, and a sedentary lifestyle. Constipation, straining during bowel movements, and a diet low in fiber can contribute to the condition."
+  },
+  {
+    "title": "Bhagandara (Fistula-in-Ano)",
+    "image": "./diseasesimg/diseasesimg/Bhangandra.png",
+    "description": "Bhagandara, corresponding to fistula-in-ano in modern medicine, is an abnormal connection between the anal canal or rectum and the skin around the anus. It often develops as a result of an anal abscess.",
+    "subtitle": "Understanding Bhagandara in Ayurveda",
+    "subdescription": "Ayurveda considers Bhagandara to be a challenging condition that requires prompt and appropriate treatment. It is often associated with the imbalance of all three doshas, particularly Pitta."
+  },
+  {
+    "title": "Udarashoola (Abdominal Pain)",
+    "image": "./diseasesimg/diseasesimg/Udarashoola.png",
+    "description": "Udarashoola refers to abdominal pain. Ayurveda recognizes various causes of abdominal pain, ranging from simple indigestion to more serious conditions.",
+    "subtitle": "Understanding Udarashoola in Ayurveda",
+    "subdescription": "Udarashoola is a symptom rather than a disease itself. Ayurveda focuses on identifying the underlying cause of the pain, which could be related to imbalances in the doshas, improper digestion, or other factors."
+  },
+  {
+    "title": "Yakrit Vikara (Liver Disorders)",
+    "image": "./diseasesimg/diseasesimg/Yakrit1.png",
+    "description": "Yakrit Vikara refers to a range of liver disorders in Ayurvedic medicine. The liver, known as Yakrit in Sanskrit, is a vital organ responsible for numerous functions, including digestion, detoxification, and metabolism.",
+    "subtitle": "Understanding Yakrit Vikara in Ayurveda",
+    "subdescription": "Ayurveda emphasizes the importance of maintaining a healthy liver for overall well-being. Imbalances in the doshas, particularly Pitta, are often implicated in liver disorders. Factors like poor diet, excessive alcohol consumption, exposure to toxins, and infections can affect liver function."
+  },
+  {
+    "title": "Pliha Vriddhi (Splenomegaly)",
+    "image": "./diseasesimg/diseasesimg/Phiha Vriddhi.png",
+    "description": "Pliha Vriddhi refers to splenomegaly, which is the enlargement of the spleen. The spleen, known as Pliha in Sanskrit, is an important organ involved in immune function and blood filtration.",
+    "subtitle": "Understanding Pliha Vriddhi in Ayurveda",
+    "subdescription": "Ayurveda connects splenomegaly to various underlying causes, often involving imbalances in the doshas, particularly Pitta and Kapha. It can be a symptom of various diseases and is not a disease in itself."
+  },
+  {
+    "title": "Pratishyaya (Common Cold)",
+    "image": "./diseasesimg/diseasesimg/Pratishyaya.png",
+    "description": "Pratishyaya, commonly known as the common cold, is a viral infection of the upper respiratory tract. It's a self-limiting illness that usually resolves within a week or two.",
+    "subtitle": "Understanding Pratishyaya in Ayurveda",
+    "subdescription": "Ayurveda attributes Pratishyaya to imbalances in the doshas, particularly Kapha, which governs the respiratory system. Factors like seasonal changes, exposure to cold, and weakened immunity can contribute to the development of a cold."
+  },
+  {
+    "title": "Peenasa (Rhinitis)",
+    "image": "./diseasesimg/diseasesimg/peenasa1.png",
+    "description": "Peenasa, in Ayurvedic terminology, encompasses various forms of rhinitis, which is inflammation of the nasal passages. This can include allergic rhinitis, non-allergic rhinitis, and other nasal conditions.",
+    "subtitle": "Understanding Peenasa in Ayurveda",
+    "subdescription": "Ayurveda attributes Peenasa to imbalances in the doshas, particularly Kapha and Pitta. Factors like seasonal changes, exposure to allergens, weakened immunity, and improper diet can contribute to the development of rhinitis."
+  },
+  {
+    "title": "Tundikeri (Tonsillitis)",
+    "image": "./diseasesimg/diseasesimg/tundikeri1.png",
+    "description": "Tundikeri refers to tonsillitis, which is the inflammation of the tonsils, often caused by a viral or bacterial infection.",
+    "subtitle": "Understanding Tundikeri in Ayurveda",
+    "subdescription": "Ayurveda considers Tundikeri to be a Kapha-predominant condition. Imbalances in Kapha, along with Pitta, can lead to inflammation and swelling of the tonsils."
+  },
+  {
+    "title": "Raktachapa (Hypertension)",
+    "image": "./diseasesimg/diseasesimg/raktachapa1.png",
+    "description": "Raktachapa refers to hypertension or high blood pressure. It is a condition in which the force of the blood against the artery walls is too high.",
+    "subtitle": "Understanding Raktachapa in Ayurveda",
+    "subdescription": "Ayurveda links Raktachapa to imbalances in the doshas, particularly Pitta. Factors like stress, diet, lifestyle, and emotional factors can contribute to hypertension."
+  },
+  {
+    "title": "Angina Pectoris",
+    "image": "./diseasesimg/diseasesimg/Angina Pectoris.png",
+    "description": "Angina pectoris is chest pain or discomfort caused by reduced blood flow to the heart muscle.",
+    "subtitle": "Understanding Angina Pectoris",
+    "subdescription": "Angina is often a symptom of coronary artery disease."
+  },
+  {
+    "title": "Pakshaghata (Paralysis)",
+    "image": "./diseasesimg/diseasesimg/Pakshaghta.png",
+    "description": "Pakshaghata refers to paralysis, which is the loss of muscle function in a part of the body.",
+    "subtitle": "Understanding Pakshaghata in Ayurveda",
+    "subdescription": "Ayurveda connects Pakshaghata to imbalances in the Vata dosha, which governs movement and the nervous system."
+  },
+  {
+    "title": "Ardhangavata (Hemiplegia)",
+    "image": "./diseasesimg/diseasesimg/Ardhanagavata.png",
+    "description": "Ardhangavata refers to hemiplegia, which is paralysis of one side of the body.",
+    "subtitle": "Understanding Ardhangavata in Ayurveda",
+    "subdescription": "Hemiplegia is often a consequence of a stroke."
+  },
+  {
+    "title": "Aphasia (Speech Disorders)",
+    "image": "./diseasesimg/diseasesimg/Aphasia.png",
+    "description": "Aphasia is a language disorder that affects a person's ability to communicate. It can impact speaking, writing, reading, and understanding language.",
+    "subtitle": "Understanding Aphasia",
+    "subdescription": "Aphasia is often caused by damage to the brain, most commonly from a stroke."
+  },
+  {
+    "title": "Apasmara (Epilepsy)",
+    "image": "./diseasesimg/diseasesimg/apasmara1.png",
+    "description": "Apasmara refers to epilepsy, a neurological disorder characterized by recurrent seizures.",
+    "subtitle": "Understanding Apasmara in Ayurveda",
+    "subdescription": "Ayurveda associates Apasmara with imbalances in the doshas, particularly Vata, Pitta, and Kapha, affecting the nervous system."
+  },
+  {
+    "title": "Unmada (Insanity)",
+    "image": "./diseasesimg/diseasesimg/Unmada.png",
+    "description": "Unmada is a broad term in Ayurveda that encompasses various mental health disorders, including psychosis, mania, and other conditions characterized by altered mental states.",
+    "subtitle": "Understanding Unmada in Ayurveda",
+    "subdescription": "Ayurveda links Unmada to imbalances in the doshas, particularly Sattva, Rajas, and Tamas (the three mental energies), and their effect on the mind (Manas)."
+  },
+  {
+    "title": "Avatara (Facial Paralysis)",
+    "image": "./diseasesimg/diseasesimg/Avatara.png",
+    "description": "Avatara refers to facial paralysis, which is the loss of facial muscle movement. Bell's palsy is a common type of facial paralysis.",
+    "subtitle": "Understanding Avatara in Ayurveda",
+    "subdescription": "Ayurveda associates Avatara with imbalances in the Vata dosha affecting the nerves controlling facial muscles."
+  },
+  {
+    "title": "Manyastambha (Torticollis)",
+    "image": "./diseasesimg/diseasesimg/Manyastambha1.png",
+    "description": "Manyastambha refers to torticollis, a condition in which the neck muscles contract involuntarily, causing the head to tilt to one side.",
+    "subtitle": "Understanding Manyastambha in Ayurveda",
+    "subdescription": "Ayurveda links Manyastambha to imbalances in the Vata dosha affecting the neck muscles."
+  },
+  {
+    "title": "Amavata (Rheumatoid Arthritis)",
+    "image": "./diseasesimg/diseasesimg/Amavata.png",
+    "description": "Amavata in Ayurveda correlates with Rheumatoid Arthritis, a chronic autoimmune disease causing inflammation and pain in the joints.",
+    "subtitle": "Understanding Amavata in Ayurveda",
+    "subdescription": "Ayurveda considers Amavata a condition arising from the accumulation of 'Ama' (undigested food residue) and its subsequent vitiation of Vata dosha, leading to joint inflammation and pain."
+  },
+  {
+    "title": "Sandhigata Vata (Osteoarthritis)",
+    "image": "./diseasesimg/diseasesimg/sandhiganta1.png",
+    "description": "Sandhigata Vata in Ayurveda corresponds to Osteoarthritis, a degenerative joint disease characterized by the breakdown of cartilage.",
+    "subtitle": "Understanding Sandhigata Vata in Ayurveda",
+    "subdescription": "Ayurveda attributes Sandhigata Vata to the aggravation of Vata dosha, leading to dryness, degeneration, and pain in the joints."
+  },
+  {
+    "title": "Gridhrasi (Sciatica)",
+    "image": "./diseasesimg/diseasesimg/Gridhrasi.png",
+    "description": "Gridhrasi refers to sciatica, which is pain that radiates along the sciatic nerve, typically from the lower back down the back of the leg.",
+    "subtitle": "Understanding Gridhrasi in Ayurveda",
+    "subdescription": "Ayurveda attributes Gridhrasi to the aggravation of Vata dosha affecting the sciatic nerve."
+  },
+  {
+    "title": "Kati Shoola (Low Back Pain)",
+    "image": "./diseasesimg/diseasesimg/Kati Shoola.png",
+    "description": "Kati Shoola refers to low back pain, a common condition affecting the lower back region.",
+    "subtitle": "Understanding Kati Shoola in Ayurveda",
+    "subdescription": "Ayurveda links Kati Shoola to imbalances in the Vata dosha, often due to strain, injury, or poor posture."
+  },
+  {
+    "title": "Manya Shoola (Neck Pain)",
+    "image": "./diseasesimg/diseasesimg/Manya Shoola.png",
+    "description": "Manya Shoola refers to neck pain, a common condition affecting the neck region.",
+    "subtitle": "Understanding Manya Shoola in Ayurveda",
+    "subdescription": "Ayurveda connects Manya Shoola to imbalances in the Vata dosha, often due to strain, injury, or poor posture."
+  },
+  {
+    "title": "Janu Shoola (Knee Pain)",
+    "image": "./diseasesimg/diseasesimg/Janu Shoola.png",
+    "description": "Janu Shoola refers to knee pain, a common ailment affecting people of all ages.",
+    "subtitle": "Understanding Janu Shoola in Ayurveda",
+    "subdescription": "Ayurveda attributes Janu Shoola to imbalances in the Vata dosha, often due to strain, injury, osteoarthritis, or other underlying conditions."
+  },
+  {
+    "title": "Asthi Bhagna (Fractures)",
+    "image": "./diseasesimg/diseasesimg/Asthi bhagna1.png",
+    "description": "Asthi Bhagna refers to bone fractures, which are breaks in a bone.",
+    "subtitle": "Understanding Asthi Bhagna",
+    "subdescription": "Ayurveda focuses on supporting the healing process of fractures alongside conventional medical care."
+  },
+  {
+    "title": "Mamsa Kshaya (Muscle Wasting)",
+    "image": "./diseasesimg/diseasesimg/Mamsa Kshaya.png",
+    "description": "Mamsa Kshaya refers to muscle wasting or atrophy, which is the loss of muscle mass.",
+    "subtitle": "Understanding Mamsa Kshaya",
+    "subdescription": "Ayurveda links muscle wasting to various underlying causes, including disuse, malnutrition, and certain diseases."
+  },
+  {
+    "title": "Kushta (Skin Diseases)",
+    "image": "./diseasesimg/diseasesimg/Kushta.png",
+    "description": "Kushta is a broad term in Ayurveda that encompasses a wide range of skin diseases.",
+    "subtitle": "Understanding Kushta in Ayurveda",
+    "subdescription": "Ayurveda attributes skin diseases to imbalances in the doshas, particularly Pitta, and often involves impurities in the blood (Rakta)."
+  },
+  {
+    "title": "Psoriasis",
+    "image": "./diseasesimg/diseasesimg/Psoriasis.png",
+    "description": "Psoriasis is a chronic autoimmune disease that affects the skin, causing rapid skin cell growth.",
+    "subtitle": "Understanding Psoriasis",
+    "subdescription": "Ayurveda considers Psoriasis a Pitta-predominant condition."
+  },
+  {
+    "title": "Dadru (Ringworm)",
+    "image": "./diseasesimg/diseasesimg/Dadru.png",
+    "description": "Dadru refers to ringworm, a fungal infection that causes a circular rash.",
+    "subtitle": "Understanding Dadru",
+    "subdescription": "Ayurveda considers ringworm a Pitta-Kapha predominant condition."
+  },
+  {
+    "title": "Kitibha (Urticaria)",
+    "image": "./diseasesimg/diseasesimg/Kitibha.png",
+    "description": "Kitibha refers to urticaria, commonly known as hives. It's a skin condition characterized by raised, itchy welts.",
+    "subtitle": "Understanding Kitibha",
+    "subdescription": "Ayurveda links urticaria to imbalances in Pitta dosha, often triggered by allergies or other sensitivities."
+  },
+  {
+    "title": "Shwitra (Leucoderma)",
+    "image": "./diseasesimg/diseasesimg/Shiwitra.png.jpg",
+    "description": "Shwitra refers to leucoderma or vitiligo, a condition causing loss of skin color in patches.",
+    "subtitle": "Understanding Shwitra",
+    "subdescription": "Ayurveda associates leucoderma with imbalances in Pitta dosha and possibly other doshas, affecting skin pigmentation."
+  },
+  {
+    "title": "Khaalitya (Baldness)",
+    "image": "./diseasesimg/diseasesimg/Khaalitya.png",
+    "description": "Khaalitya refers to baldness or hair loss.",
+    "subtitle": "Understanding Khaalitya",
+    "subdescription": "Ayurveda connects hair loss to imbalances in the doshas, especially Pitta, and can be influenced by factors like diet, stress, and genetics."
+  },
+  {
+    "title": "Palitya (Premature Graying of Hair)",
+    "image": "./diseasesimg/diseasesimg/palitya1.png",
+    "description": "Palitya refers to premature graying of hair.",
+    "subtitle": "Understanding Palitya",
+    "subdescription": "Ayurveda links premature graying to imbalances in Pitta dosha and can be influenced by factors like stress, diet, and lifestyle."
+  },
+  {
+    "title": "Netra Roga (Eye Diseases)",
+    "image": "./diseasesimg/diseasesimg/Netra Roga.png",
+    "description": "Netra Roga is a broad term in Ayurveda encompassing various eye diseases.",
+    "subtitle": "Understanding Netra Roga",
+    "subdescription": "Ayurveda attributes eye diseases to imbalances in the doshas, particularly Pitta, and can be influenced by various factors."
+  },
+  {
+    "title": "Karna Roga (Ear Diseases)",
+    "image": "./diseasesimg/diseasesimg/Karna Roga.png",
+    "description": "Karna Roga is a broad term in Ayurveda encompassing various ear diseases.",
+    "subtitle": "Understanding Karna Roga",
+    "subdescription": "Ayurveda attributes ear diseases to imbalances in the doshas and can be influenced by various factors."
+  },
+  {
+    "title": "Nasa Roga (Nasal Diseases)",
+    "image": "./diseasesimg/diseasesimg/nasal roga.png",
+    "description": "Nasa Roga is a broad term in Ayurveda encompassing various nasal diseases.",
+    "subtitle": "Understanding Nasa Roga",
+    "subdescription": "Ayurveda attributes nasal diseases to imbalances in the doshas and can be influenced by various factors."
+  },
+  {
+    "title": "Mukha Roga (Mouth Diseases)",
+    "image": "./diseasesimg/diseasesimg/mukha roga.png",
+    "description": "Mukha Roga is a broad term in Ayurveda encompassing various diseases affecting the mouth.",
+    "subtitle": "Understanding Mukha Roga",
+    "subdescription": "Ayurveda attributes mouth diseases to imbalances in the doshas, often involving Pitta and Kapha, and can be influenced by factors like diet and oral hygiene."
+  },
+  {
+    "title": "Jihwa Roga (Tongue Diseases)",
+    "image": "./diseasesimg/diseasesimg/jahwa roga.png",
+    "description": "Jihwa Roga refers to diseases affecting the tongue.",
+    "subtitle": "Understanding Jihwa Roga",
+    "subdescription": "Ayurveda associates tongue diseases with imbalances in the doshas, often involving Pitta and Kapha."
+  },
+  {
+    "title": "Danta Roga (Dental Diseases)",
+    "image": "./diseasesimg/diseasesimg/danta roga.png",
+    "description": "Danta Roga refers to dental diseases.",
+    "subtitle": "Understanding Danta Roga",
+    "subdescription": "Ayurveda connects dental diseases to imbalances in the doshas and can be influenced by factors like diet, oral hygiene, and lifestyle."
+  },
+  {
+    "title": "Mutrakrichchra (Urinary Disorders)",
+    "image": "./diseasesimg/diseasesimg/Mutrakrichchra.png",
+    "description": "Mutrakrichchra is a broad term in Ayurveda encompassing various urinary disorders.",
+    "subtitle": "Understanding Mutrakrichchra",
+    "subdescription": "Ayurveda attributes urinary disorders to imbalances in the doshas, particularly Pitta, and can be influenced by factors like diet, hydration, and lifestyle."
+  },
+  {
+    "title": "Ashmari (Kidney Stones)",
+    "image": "./diseasesimg/diseasesimg/ashmari.png",
+    "description": "Ashmari refers to kidney stones, which are hard deposits of minerals and salts that form inside the kidneys.",
+    "subtitle": "Understanding Ashmari",
+    "subdescription": "Ayurveda links kidney stones to imbalances in the doshas, particularly Pitta and Vata, and can be influenced by factors like diet and hydration."
+  },
+  {
+    "title": "Prameha (Diabetes)",
+    "image": "./diseasesimg/diseasesimg/Pramesha.png",
+    "description": "Prameha in Ayurveda correlates with Diabetes Mellitus, a metabolic disorder characterized by high blood sugar levels.",
+    "subtitle": "Understanding Prameha in Ayurveda",
+    "subdescription": "Ayurveda considers Prameha a condition involving imbalances in all three doshas, affecting multiple tissues and systems in the body."
+  },
+  {
+    "title": "Shukrameha (Spermatorrhea)",
+    "image": "./diseasesimg/diseasesimg/shukramesha.png",
+    "description": "Shukrameha is a term used in Ayurveda, sometimes associated with involuntary ejaculation or excessive sperm discharge. It's important to note that modern medicine may not recognize this as a distinct medical condition in the same way.",
+    "subtitle": "Understanding Shukrameha",
+    "subdescription": "Ayurveda links Shukrameha to imbalances in the doshas, particularly Vata and Pitta, and can be influenced by factors like diet, lifestyle, and mental state."
+  },
+  {
+    "title": "Stree Roga (Gynecological Disorders)",
+    "image": "./diseasesimg/diseasesimg/stree roga.png",
+    "description": "Stree Roga is a broad term in Ayurveda encompassing various gynecological disorders affecting women's health.",
+    "subtitle": "Understanding Stree Roga",
+    "subdescription": "Ayurveda attributes gynecological disorders to imbalances in the doshas, particularly Vata, Pitta, and Kapha, and can be influenced by factors like diet, lifestyle, and stress."
+  },
+  {
+    "title": "Artava Vikara (Menstrual Disorders)",
+    "image": "./diseasesimg/diseasesimg/artava vikrata.png",
+    "description": "Artava Vikara refers to menstrual disorders in Ayurveda, encompassing various irregularities in the menstrual cycle.",
+    "subtitle": "Understanding Artava Vikara",
+    "subdescription": "Ayurveda links menstrual disorders to imbalances in the doshas, particularly Vata and Pitta, and can be influenced by factors like diet, lifestyle, and stress."
+  },
+  {
+    "title": "Vandhyatva (Infertility)",
+    "image": "./diseasesimg/diseasesimg/vandhyatava1.png",
+    "description": "Vandhyatva refers to infertility, the inability to conceive after a certain period of trying.",
+    "subtitle": "Understanding Vandhyatva",
+    "subdescription": "Ayurveda may attribute infertility to various factors affecting both male and female reproductive health."
+  },
+  {
+      "title": "Raktapitta (Bleeding Disorders)",
+      "image": "./diseasesimg/diseasesimg/Raktapitta.png",
+      "description": "Raktapitta refers to bleeding disorders in Ayurveda, characterized by abnormal bleeding.",
+      "subtitle": "Understanding Raktapitta",
+      "subdescription": "Ayurveda links bleeding disorders to imbalances in Pitta dosha, which is associated with blood and metabolism."
+    },
+    {
+      "title": "Pandu Roga (Anemia)",
+      "image": "./diseasesimg/diseasesimg/Pandu roga.png",
+      "description": "Pandu Roga refers to anemia, a condition characterized by a deficiency of red blood cells or hemoglobin.",
+      "subtitle": "Understanding Pandu Roga",
+      "subdescription": "Ayurveda links anemia to various factors, including nutritional deficiencies and other underlying conditions."
+    },
+    {
+      "title": "Sthaulya (Obesity)",
+      "image": "./diseasesimg/diseasesimg/Sthaulya.png",
+      "description": "Sthaulya refers to obesity, a condition characterized by excessive body fat accumulation.",
+      "subtitle": "Understanding Sthaulya",
+      "subdescription": "Ayurveda considers obesity to be due to an imbalance of Kapha dosha and can be influenced by diet, lifestyle, and genetic factors."
+    },
+    {
+      "title": "Karshya (Emaciation)",
+      "image": "./diseasesimg/diseasesimg/karshya1.png",
+      "description": "Karshya, in Ayurveda, refers to a state of extreme thinness or emaciation, often resulting from malnutrition, chronic diseases, or metabolic disorders. It's characterized by a depletion of tissues, weakness, and reduced vitality.",
+      "subtitle": "Causes and Symptoms",
+      "subdescription": "Causes can include inadequate diet, malabsorption, chronic infections, psychological factors like stress and anxiety, and certain diseases. Symptoms may involve weight loss, muscle wasting, fatigue, dry skin, and diminished strength."
+    },
+    {
+      "title": "Vishama Jwara (Malaria)",
+      "image": "./diseasesimg/diseasesimg/Vishama Jwara.png",
+      "description": "Vishama Jwara, correlating to Malaria in modern medicine, is described in Ayurveda as a fever characterized by irregular or intermittent patterns. It's caused by the imbalance of doshas, often involving Pitta and Kapha, leading to fever, chills, and other associated symptoms.",
+      "subtitle": "Ayurvedic Perspective on Malaria",
+      "subdescription": "Ayurveda emphasizes the role of environmental factors, seasonal changes, and weakened immunity in the manifestation of Vishama Jwara. The treatment approach focuses on balancing the doshas, strengthening digestion, and eliminating toxins (Ama) from the body."
+    },
+    {
+      "title": "Pliha Vriddhi (Splenomegaly)",
+      "image": "./diseasesimg/diseasesimg/Phiha Vriddhi.png",
+      "description": "Pliha Vriddhi refers to splenomegaly, which is the enlargement of the spleen. The spleen, known as Pliha in Sanskrit, is an important organ involved in immune function and blood filtration.",
+      "subtitle": "Understanding Pliha Vriddhi in Ayurveda",
+      "subdescription": "Ayurveda connects splenomegaly to various underlying causes, often involving imbalances in the doshas, particularly Pitta and Kapha. It can be a symptom of various diseases and is not a disease in itself."
+    },
+    {
+      "title": "Constipation (Vibandha)",
+      "image": "./diseasesimg/diseasesimg/constipation23.png",
+      "description": "Constipation, or Vibandha in Ayurveda, refers to infrequent bowel movements or difficulty passing stools.",
+      "subtitle": "Understanding Vibandha",
+      "subdescription": "Ayurveda links constipation to imbalances in Vata dosha and can be influenced by factors like diet, hydration, and lifestyle."
+    },
+    {
+      "title": "Anorexia/Loss of Appetite (Aruchi)",
+      "image": "./diseasesimg/diseasesimg/Aruchi.png",
+      "description": "Anorexia or loss of appetite, known as Aruchi in Ayurveda, refers to a decreased desire to eat.",
+      "subtitle": "Understanding Aruchi",
+      "subdescription": "Ayurveda attributes loss of appetite to various factors, including emotional factors, digestive issues, and underlying medical conditions."
+    },
+    {
+      "title": "Vomiting (Chhardi)",
+      "image": "./diseasesimg/diseasesimg/Vomiting.png",
+      "description": "Vomiting, or Chhardi in Ayurveda, is the forceful expulsion of stomach contents through the mouth.",
+      "subtitle": "Understanding Chhardi",
+      "subdescription": "Ayurveda links vomiting to various factors, including dietary indiscretions, infections, and other underlying conditions."
+    },
+    {
+      "title": "Abdominal Pain (Shula)",
+      "image": "./diseasesimg/diseasesimg/Abdominal.png",
+      "description": "Abdominal pain, known as Shula in Ayurveda, is a common symptom with a wide range of possible causes.",
+      "subtitle": "Understanding Shula",
+      "subdescription": "Ayurveda approaches abdominal pain by considering the doshas involved and the specific location and nature of the pain."
+    },
+    {
+      "title": "Diarrhea (Atisara)",
+      "image": "./diseasesimg/diseasesimg/diarrhea1.png",
+      "description": "Diarrhea, or Atisara in Ayurveda, is characterized by frequent, loose, and watery stools.",
+      "subtitle": "Understanding Atisara",
+      "subdescription": "Ayurveda links diarrhea to imbalances in the doshas, often involving Pitta and Vata, and can be caused by various factors."
+    },
+    {
+      "title": "Malabsorption Syndrome (Grahani)",
+      "image": "./diseasesimg/diseasesimg/malabsorpatin g.png",
+      "description": "Malabsorption syndrome, sometimes correlated with Grahani in Ayurveda, refers to the inability of the small intestine to properly absorb nutrients from food.",
+      "subtitle": "Understanding Grahani",
+      "subdescription": "Ayurveda describes Grahani as a condition involving impaired Agni (digestive fire), leading to incomplete digestion and absorption."
+    },
+    {
+      "title": "Hyperacidity (Amlapitta)",
+      "image": "./diseasesimg/diseasesimg/hyperacidity1.png",
+      "description": "Hyperacidity, known as Amlapitta in Ayurveda, refers to a condition characterized by excessive acid production in the stomach, leading to various digestive discomforts.",
+      "subtitle": "Understanding Amlapitta",
+      "subdescription": "Ayurveda attributes hyperacidity to an aggravation of Pitta dosha, often due to dietary and lifestyle factors."
+    },
+
+    {
+      "title": "Fistula-in-Ano (Bhagandara)",
+      "image": "./diseasesimg/diseasesimg/Fistuta-in-Ano.png",
+      "description": "Fistula-in-ano, known as Bhagandara in Ayurveda, is an abnormal connection between the anal canal or rectum and the skin around the anus.",
+      "subtitle": "Understanding Bhagandara",
+      "subdescription": "Ayurveda considers fistula-in-ano a challenging condition often involving imbalances in all three doshas."
+    },
+    {
+      "title": "Rhinitis/Sinusitis (Pinasa)",
+      "image": "./diseasesimg/diseasesimg/Rhintis.png",
+      "description": "Rhinitis and sinusitis, sometimes referred to as Pinasa in Ayurveda, involve inflammation of the nasal passages and sinuses.",
+      "subtitle": "Understanding Pinasa",
+      "subdescription": "Ayurveda attributes rhinitis and sinusitis to imbalances in the doshas, particularly Kapha and Pitta, and can be triggered by allergies, infections, and other factors."
+    },
+    {
+      "title": "Cough (Kasa)",
+      "image": "./diseasesimg/diseasesimg/Cough.png",
+      "description": "Cough, known as Kasa in Ayurveda, is a reflex action that helps clear the airways of irritants.",
+      "subtitle": "Understanding Kasa",
+      "subdescription": "Ayurveda classifies cough based on the dosha involved (Vata, Pitta, Kapha) and its characteristics."
+    },
+    {
+      "title": "Asthma/Respiratory Disorders (Shwasa)",
+      "image": "./diseasesimg/diseasesimg/Asthma.png",
+      "description": "Asthma, sometimes referred to as Shwasa in Ayurveda, is a chronic respiratory condition characterized by inflammation and narrowing of the airways.",
+      "subtitle": "Understanding Shwasa",
+      "subdescription": "Ayurveda considers asthma to be a Kapha-predominant condition, often aggravated by Vata and Pitta."
+    },
+    {
+      "title": "Hiccups (Hikka)",
+      "image": "./diseasesimg/diseasesimg/hiccups1.png",
+      "description": "Hiccups, known as Hikka in Ayurveda, are involuntary contractions of the diaphragm, causing a characteristic sound.",
+      "subtitle": "Understanding Hikka",
+      "subdescription": "Ayurveda may attribute hiccups to imbalances in the doshas, particularly Vata."
+    },
+    {
+      "title": "Epilepsy (Apasmara)",
+      "image": "./diseasesimg/diseasesimg/Epilepsy.png",
+      "description": "Epilepsy, known as Apasmara in Ayurveda, is a neurological disorder characterized by recurrent seizures.",
+      "subtitle": "Understanding Apasmara",
+      "subdescription": "Ayurveda associates epilepsy with imbalances in the doshas, particularly Vata, Pitta, and Kapha, affecting the nervous system."
+    },
+    {
+    "title": "Syncope/Fainting (Murcha)",
+    "image": "./diseasesimg/diseasesimg/syncope.png",
+    "description": "Syncope, known as Murcha in Ayurveda, refers to a temporary loss of consciousness due to a decrease in blood flow to the brain.",
+    "subtitle": "Understanding Murcha",
+    "subdescription": "Ayurveda may associate syncope with imbalances in the doshas, particularly Vata, affecting the nervous system and circulation."
+  },
+  {
+    "title": "Vertigo/Dizziness (Bhrama)",
+    "image": "./diseasesimg/diseasesimg/Vertigo.png",
+    "description": "Syncope, known as Murcha in Ayurveda, refers to a temporary loss of consciousness due to a decrease in blood flow to the brain.",
+    "subtitle": "Understanding Murcha",
+    "subdescription": "Ayurveda may associate syncope with imbalances in the doshas, particularly Vata, affecting the nervous system and circulation."
+  },
+  {
+    "title": "Insomnia (Nidranasha)",
+    "image": "./diseasesimg/diseasesimg/Insmnia.png",
+    "description": "Insomnia, known as Nidranasha in Ayurveda, is difficulty falling asleep or staying asleep.",
+    "subtitle": "Understanding Nidranasha",
+    "subdescription": "Ayurveda links insomnia to imbalances in the doshas, particularly Vata, and can be influenced by factors like stress, diet, and lifestyle."
+  },
+  {
+    "title": "Psychosis (Unmada)",
+    "image": "./diseasesimg/diseasesimg/Psychosis.png",
+    "description": "Psychosis, sometimes referred to as Unmada in Ayurveda, is a mental health condition characterized by a loss of contact with reality.",
+    "subtitle": "Understanding Unmada",
+    "subdescription": "Ayurveda links psychosis to imbalances in the doshas and the mental energies (Sattva, Rajas, Tamas)."
+  },
+  {
+    "title": "Depression (Avsada)",
+    "image": "./diseasesimg/diseasesimg/Depression.png",
+    "description": "Depression, sometimes referred to as Avsada in Ayurveda, is a common mental health condition characterized by persistent sadness and loss of interest.",
+    "subtitle": "Understanding Avsada",
+    "subdescription": "Ayurveda may associate depression with imbalances in the doshas and the mental energies."
+  },
+  {
+    "title": "Skin Diseases (Kushta)",
+    "image": "./diseasesimg/diseasesimg/Skin Diseases.png",
+    "description": "Kushta is a broad Ayurvedic term encompassing various skin diseases.",
+    "subtitle": "Understanding Kushta",
+    "subdescription": "Ayurveda attributes skin diseases to imbalances in the doshas, particularly Pitta, and often involves impurities in the blood (Rakta)."
+  },
+  {
+    "title": "Ringworm (Dadru)",
+    "image": "./diseasesimg/diseasesimg/Ringworm.png",
+    "description": "Dadru refers to ringworm, a fungal infection causing a circular rash.",
+    "subtitle": "Understanding Dadru",
+    "subdescription": "Ayurveda considers ringworm a Pitta-Kapha predominant condition."
+  },
+  {
+    "title": "Baldness (Khalitya)",
+    "image": "./diseasesimg/diseasesimg/Bladness.png",
+    "description": "Khalitya refers to baldness or hair loss.",
+    "subtitle": "Understanding Khalitya",
+    "subdescription": "Ayurveda connects hair loss to imbalances in the doshas, especially Pitta, and can be influenced by factors like diet, stress, and genetics."
+  },
+  {
+    "title": "Graying of Hair (Palitya)",
+    "image": "./diseasesimg/diseasesimg/Graying of Hair.png",
+    "description": "Palitya refers to premature graying of hair.",
+    "subtitle": "Understanding Palitya",
+    "subdescription": "Ayurveda links premature graying to imbalances in Pitta dosha and can be influenced by factors like stress, diet, and lifestyle."
+  },
+  
+  {
+    "title": "Sciatica (Gridhrasi)",
+    "image": "./diseasesimg/diseasesimg/sciatica1.png",
+    "description": "Gridhrasi refers to sciatica, which is pain that radiates along the sciatic nerve, typically from the lower back down the back of the leg.",
+    "subtitle": "Understanding Gridhrasi",
+    "subdescription": "Ayurveda attributes Gridhrasi to the aggravation of Vata dosha affecting the sciatic nerve."
+  },
+  {
+    "title": "Gout (Vata Rakta)",
+    "image": "./diseasesimg/diseasesimg/Gout.png",
+    "description": "Vata Rakta in Ayurveda correlates with gout, a form of inflammatory arthritis characterized by sudden, severe attacks of pain, swelling, redness, and tenderness in the joints.",
+    "subtitle": "Understanding Vata Rakta",
+    "subdescription": "Ayurveda considers Vata Rakta a condition involving vitiation of both Vata and Rakta (blood), often due to dietary and lifestyle factors."
+  },
+
+  {
+    "title": "Leucorrhea (Pradara)",
+    "image": "./diseasesimg/diseasesimg/leucorrhea1.png",
+    "description": "Pradara, often associated with leucorrhea, refers to a whitish or yellowish vaginal discharge.",
+    "subtitle": "Understanding Pradara",
+    "subdescription": "Ayurveda may attribute leucorrhea to imbalances in the doshas, particularly Kapha."
+  },
+  
+  {
+    "title": "Anemia (Pandu)",
+    "image": "./diseasesimg/diseasesimg/malabsorpatin g.png",
+    "description": "Pandu refers to anemia, a condition characterized by a deficiency of red blood cells or hemoglobin.",
+    "subtitle": "Understanding Pandu",
+    "subdescription": "Ayurveda links anemia to various factors, including nutritional deficiencies and other underlying conditions."
+  },
+  {
+    "title": "Psychosis (Unmada)",
+    "image": "./diseasesimg/diseasesimg/Psychosis.png",
+    "description": "Psychosis, sometimes referred to as Unmada in Ayurveda, is a mental health condition characterized by a loss of contact with reality.",
+    "subtitle": "Understanding Unmada",
+    "subdescription": "Ayurveda links psychosis to imbalances in the doshas and the mental energies (Sattva, Rajas, Tamas)."
+  },
+    ];
+        
+        const container = document.getElementById("container");
+        const searchBox = document.getElementById("search");
+        
+        function renderItems(filteredItems) {
+            container.innerHTML = "";
+            filteredItems.forEach(item => {
+                const div = document.createElement("div");
+                div.className = "bg-white shadow-lg rounded-lg p-6 w-72";
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-32 object-cover rounded-md">
+                    <h2 class="text-lg font-bold mt-3">${item.title}</h2>
+                    <p class="text-gray-600 text-sm">${item.description}</p>
+                    <h3 class="text-md font-semibold mt-2">${item.subtitle}</h3>
+                    <p class="text-gray-500 text-xs">${item.subdescription}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+        
+        searchBox.addEventListener("input", () => {
+            const query = searchBox.value.toLowerCase();
+            const filteredItems = items.filter(item => item.title.toLowerCase().includes(query));
+            renderItems(filteredItems);
+        });
+        
+        renderItems(items);
+    </script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="bg.css">
+    <title>Product Search & Filter</title>
+</head>
+<body class="w-screen bg-[#e8e7e7]">
+  <div class="md:h-[500px] bg-cover  bg-[url('/assets/shop.png')]">
+
+            
+    <nav class="bg-white md:mx-40 mx-10 h-20 space-between flex rounded-b-3xl">
+        <div><img class="mx-6 my-4 md:h-10 h-8" src="/img/icon_ayu/New folder (2)/Logo (1).png" alt=""></div>
+        <div class="ml-auto ">
+          <ul class=" ml-auto m-5  md:flex hidden">
+              <a href="./index.html"><li class="mr-10 font-normal text-lg  ">Home</li></a>
+              <a href="./about.html"><li class="mr-10 font-normal text-lg  ">About</li></a>
+              <a href="./Shop.html"><li class="mr-10 font-normal text-lg  ">Shop</li></a>
+              <a href="./Diseases.html"><li class="mr-10 font-normal text-lg  ">Diseases</li></a>
+              <a href="./contact.html"><li class="mr-10 font-normal text-lg  ">Contact</li></a>
+              <a href="https://pure-aayu-ai.netlify.app/"><li class="mr-10 font-normal text-lg  ">AI</li></a>
+              
+            </ul>
+      
+        </div>
+      </nav>
+      
+      <h1 class="text-white font-bold text-3xl absolute top-40 right-[650px]">Pure - Aayu Center</h1>
+      
+      <div>
+        <div class="flex justify-center mt-20 pb-10 align-middle md:mt-40 ">
+          <div class="flex flex-col md:flex-row gap-4">
+              <input id="search-box" class="px-5 py-3 border-2 border-white text-white md:w-96 rounded-4xl" type="text" placeholder="Search by product name..." onkeyup="filterProducts()">
+              <select id="price-filter" class="px-2 py-3 border-2  border-white text-white rounded-4xl" onchange="filterProducts()">
+                  <option class="text-black" value="">Filter by Price</option>
+                  <option class="text-black" value="low">Low to High</option>
+                  <option class="text-black" value="high">High to Low</option>
+              </select>
+          </div>
+      </div>
+
+      </div>
+</div>
+
+    
+
+    <div class="m-4">
+        <p class="text-center my-10 text-4xl font-bold">Products</p>
+        <div id="product-container" class="flex flex-wrap gap-4 justify-center"></div>
+    </div>
+
+    <footer class="bg-[url('/assets/footer.png')] bg- text-white py-10 px-6 mt-40">
+      <!-- <img src="assets/footer.png" alt=""> -->
+      <div class="max-w-6xl mx-auto ">
+          <!-- Top Section -->
+          <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-600 pb-6">
+              <h2 class="text-xl font-bold text-center md:text-left">Sign Up To Get Updates & News About Us..</h2>
+              <!-- <div class="flex mt-4 md:mt-0">
+                  <input type="email" placeholder="Enter Your Email.." class="px-4 py-2 rounded-l-full w-64 text-black focus:outline-none">
+                  <button class="bg-brown-700 px-4 py-2 rounded-r-full text-white font-medium">Subscribe</button>
+              </div> -->
+          </div>
+    
+          <!-- Bottom Section -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+              <!-- About -->
+              <div>
+                  <h3 class="text-lg font-semibold">Pure Ayurveda</h3>
+                  <p class="mt-2 text-gray-400">met minim mollit non deserunt ullamco est sit Velit officia consequat duis enim velit mollit. sunt nost</p>
+              </div>
+    
+              <!-- Useful Links -->
+              <div>
+                  <h3 class="text-lg font-semibold">Useful Links</h3>
+                  <ul class="mt-2 space-y-2 text-gray-400">
+                      <li>Shipping Option</li>
+                      <li>My Wishlist</li>
+                      <li>My Account</li>
+                      <li>Return Policy</li>
+                      <li>Shopping FAQs</li>
+                  </ul>
+              </div>
+    
+              <!-- Contact Info -->
+              <div>
+                  <h3 class="text-lg font-semibold">Contact Info</h3>
+                  <ul class="mt-2 space-y-2 text-gray-400">
+                      <li class="flex items-center">
+                          📍 4517 Washington Ave. Manchester, 39495
+                      </li>
+                      <li class="flex items-center">
+                          📞 (208) 555-0112
+                      </li>
+                      <li class="flex items-center">
+                          ✉️ example@gmail.com
+                      </li>
+                  </ul>
+              </div>
+          </div>
+    
+          <!-- Copyright -->
+          <div class="text-center text-gray-400 mt-6 border-t border-gray-600 pt-4">
+              Copyright © 2024. All Right Reserved. Pure Ayurveda
+          </div>
+      </div>
+    </footer>
+
+    <script>
+        const products = [
+    { id: "HIBISCUS", imgSrc: "https://m.media-amazon.com/images/I/61e1+fIro9L._AC_UL480_FMwebp_QL65_.jpg", description: "Nat Habit Sulfate-Free Natural Five Oils Hibiscus Hair Growth Shampoo, Navdha Shampoo for Women and Men (Pack of 1 X 250ml)", price: 358, link: "https://amzn.in/d/9WLguNM" },
+    { id: "Ashvagandha", imgSrc: "https://m.media-amazon.com/images/I/61eNW65rU0L._AC_UL480_FMwebp_QL65_.jpg", description: "Himalaya Ashvagandha General Wellness Tablets | Stress Relief | Rejuvenates Mind & Body - 60 Tablets", price: 201, link: "https://www.amazon.in/Himalaya-Wellness-Herbs-Ashvagandha-General/dp/B01DQV8BIM/ref=sr_1_5_f3_0o_fs_mod_primary_alm?crid=YAB3BK63T2YH&dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSf6u2YIRP70Xfe2Y8SBQmHTPjtpS3zG3_nljj85dPu-Iq3_MJfmGuZPZU1eVwAAkySxzWd_SRI645X9irRBQSzNlM8KbnbpZyzgOS3Rt-JqSDvTgiNkKHRyDH998X1D3R7DXXDM0yln9qXQ5keGuR3zPNcpfQGfPvMz5DSkbsoj7S0eGzNetbEDicsWUbYGhu6CQd-iwM8Zo9wNvpt6eVBeL0SnEWl2gY2QMt77M6wBWRXNJVqwaeVO8L6WHFBtJSs2fNFOnUiXOrEZcwFdWyWvYzE_IK7a2eLebA5k0T-UTeLIPUg1eahYjzJKWwKBL1WVYb1hqnPpKW7p5fJY7TRLCXGiqQnp3JXbuVmPlOqxt.-GZpJNgtcxiKhloxY-ob9DEFk8a49xVS98bCI05qdYQ&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742461051&sbo=m6DjfpMzMLDmL8pSMKX8hw%3D%3D&sprefix=ayurvedic%2Bproducts%2Caps%2C397&sr=8-5&th=1" },
+    { id: "Kerala Ayurveda Mahanarayana Thailam", imgSrc: "https://m.media-amazon.com/images/I/51ftUSNR5EL._AC_UL480_FMwebp_QL65_.jpg", description: "Kerala Ayurveda Mahanarayana Thailam - 200 ml | Ayurvedic Oil for Muscle Soreness & Stiffness | Increases Flexibility in Joints | Tel Massage Oil | Strengthens Nerves & Muscles | Relieve Joint Pain", price: 244, link: "https://www.amazon.in/Kerala-Ayurveda-Mahanarayana-Thailam-Flexibility/dp/B07F5M6217/ref=sr_1_6?crid=19TQ6YSIY7IO0&dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSf6u2YIRP70Xfe2Y8SBQmHTPjtpS3zG3_nljj85dPu-I70kcOmJ7S6aB-up97FQ1nmzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNXx8azU-4kKRBm_g8nAp86xIojMumRgeCCxeifNnv0PtplsHB5nO4MZsmTIvcRNwpeyaSOSVtnjRGbjTh5N12p3GPzKYmT1R7Mc01m7RAGHp9OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU.9EPWfTvjMkUpT-dM2sys7dcVXnUOIZt7tHdOlHqkPSA&dib_tag=se&keywords=ayurvedic+products&qid=1742461718&sprefix=ayurvedic+products%2Caps%2C511&sr=8-6" },
+    { id: "Cholesterol Care Juice", imgSrc: "https://m.media-amazon.com/images/I/719NC3XqzFL._AC_UL480_FMwebp_QL65_.jpg", description: "KRISHNA'S HERBAL & AYURVEDA Cholesterol Care Juice - 1000 Ml | Contains Honey With Apple Cider Ginger Garlic, Sugar Free, Helps In Digestion, Made In India", price: 600, link: "https://www.amazon.in/Krishnas-Cholesterol-Contains-Ginger-Digestion/dp/B09TZSXP2B/ref=sr_1_7?crid=YAB3BK63T2YH&dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSf6u2YIRP70Xfe2Y8SBQmHTPjtpS3zG3_nljj85dPu-I70kcOmJ7S6aB-up97FQ1nmzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNXx8azU-4kKRBm_g8nAp86xIojMumRgeCCxeifNnv0PtplsHB5nO4MZsmTIvcRNwpeyaSOSVtnjRGbjTh5N12p3GPzKYmT1R7Mc01m7RAGHp9OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU.9EPWfTvjMkUpT-dM2sys7dcVXnUOIZt7tHdOlHqkPSA&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462040&sprefix=ayurvedic%2Bproducts%2Caps%2C397&sr=8-7&th=1" },
+    { id: "Charak Pharma Kofol Chewable Tablet", imgSrc: "https://m.media-amazon.com/images/I/61L+SsWnI1L._AC_UL480_FMwebp_QL65_.jpg", description: "Charak Pharma Kofol Chewable Tablet for Cough, Sore Throat | Ayurvedic Tablets For Seasonal Cough & Bad Breath Each 60 Tablet (Pack of 3)", price: 123, link: "https://www.amazon.in/Charak-Pharma-Chewable-Tablet-Threat/dp/B01N2XNE8A/ref=sr_1_9?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462499&sr=8-9&th=1" },
+    { id: "Dabur Honitus Hot Sip", imgSrc: "https://m.media-amazon.com/images/I/81zkmm6j6VL._AC_UL480_FMwebp_QL65_.jpg", description: "Dabur Honitus Hot Sip - Pack of 30 Sachets ( 4gx30 )| 100% Ayurvedic Kadha | Provides Instant Relief from Cough, Cold & Sore Throat | Natural Immunity Booster | Unique Blend of 15 Ayurvedic Herbs", price: 306, link: "https://www.amazon.in/Dabur-Honitus-Ayurvedic-Kaadha-sachets/dp/B074KRKRGW/ref=sr_1_10?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-10" },
+    { id: "Zandu Ashwagandha Gold Plus", imgSrc: "https://m.media-amazon.com/images/I/61XUXAPtTML._AC_UL480_FMwebp_QL65_.jpg", description: "Zandu Ashwagandha Gold Plus | Made with Gold, Ashwagandha, Safed Musli, Shilajit & Other Ayurvedic Ingredients | Helps to Boost Stamina, Strengthens Immunity | 60 Caps", price: 344, link: "https://www.amazon.in/Zandu-400017429-Ashwagandha-Gold-Plus/dp/B0CH35661V/ref=sr_1_11?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-11" },
+    
+    { id: "Dabur Jamun Neem Karela Juice", imgSrc: "https://m.media-amazon.com/images/I/815ISK5MWBL._AC_UL480_FMwebp_QL65_.jpg", description: "Dabur Jamun Neem Karela Juice - 1L | Helps Control Blood Sugar Level & Reduces Bad Cholesterol | Good for Metabolic & Digestive Health | Ayurvedic Health Juice For Diabetic Care", price: 299, link: "https://www.amazon.in/Dabur-Jamun-Neem-Karela-Juice/dp/B08W36QBV9/ref=sr_1_12?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-12" },
+    { id: "Dabur Triphala Churna", imgSrc: "https://m.media-amazon.com/images/I/71d3c4IhnWL._AC_UL480_FMwebp_QL65_.jpg", description: "Dabur Triphala Churna Ayurvedic Remedy For Gastro Intestinal Health - 500g", price: 187, link: "https://www.amazon.in/Triphala-Churna-Ayurvedic-Remedy-Intestinal/dp/B00IS24QPC/ref=sr_1_13_f3_0o_fs_mod_primary_alm?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462612&sbo=m6DjfpMzMLDmL8pSMKX8hw%3D%3D&sr=8-13&th=1" },
+    { id: "Zandu Pancharishta", imgSrc: "https://m.media-amazon.com/images/I/61J9gXM+qFL._AC_UL480_FMwebp_QL65_.jpg", description: "Zandu Pancharishta 650ml", price: 182, link: "https://www.amazon.in/Zandu-Pancharishta-650-ml/dp/B07TTNY4GC/ref=sr_1_14_f3_0o_fs_mod_primary_alm?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462612&sbo=m6DjfpMzMLDmL8pSMKX8hw%3D%3D&sr=8-14&th=1" },
+    { id: "Just Herbs Lipstick", imgSrc: "https://m.media-amazon.com/images/I/5190fG9PqOL._AC_UL480_FMwebp_QL65_.jpg", description: "Just Herbs Ayurvedic Creamy Matte Micro Mini Lipstick Kit Lip Hydrating & Moisturizing, Lipsticks for Women Suitable All Indian Tones (Pack of 16)", price: 299, link: "https://www.amazon.in/Just-Herbs-Ayurvedic-Lipstick-Micro-Mini/dp/B08QZKCWG6/ref=sr_1_16?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462612&sr=8-16&th=1" },
+    { id: "Seer Secrets", imgSrc: "https://m.media-amazon.com/images/I/81RZUQSXqOL._AC_UL480_FMwebp_QL65_.jpg", description: "Seer Secrets 100% Natural Ayurvedic Herbal Manual Massager Potli, Pain Relief, Knee, Muscles Relaxation, Neck, Back, Legs, Increase Blood Circulation for Men Women - 180GM", price: 399, link: "https://www.amazon.in/Seer-Secrets-Ayurvedic-%E2%94%82Microwaveable-Relieving/dp/B076G14F52/ref=sr_1_19?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462612&sr=8-19&th=1" },
+    { id: "Multani Kuka Cough Lozenges", imgSrc: "https://m.media-amazon.com/images/I/71lO24S6CcL._AC_UL480_FMwebp_QL65_.jpg", description: "Multani Kuka Cough Lozenges | Tulsi-Ginger (8 x 6) Ayurvedic Tulsi Drops | Relief From Cough, Sore Throat & Other Throat Problems | Ayurvedic Cough Relief Products | Tulsi-Ginger (48 Lozenges)", price: 107, link: "https://www.amazon.in/Multani-Lozenges-Tulsi-Ginger-Ayurvedic-Problems/dp/B0CXPSPXBK/ref=sr_1_15?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-15" },
+    { id: "AVP Nalpamaradi Coconut Oil Balm", imgSrc: "https://m.media-amazon.com/images/I/71XmywVTHpL._AC_UL480_FMwebp_QL65_.jpg", description: "AVP Nalpamaradi Coconut Oil Balm 40g| Ayurvedic De-Tan Balm for Skin Brightening, Acne Marks, Blemish and Tan Removal with Pure Turmeric and Exotic Sandalwood | Paraben Free | Chemical Free |", price: 294, link: "https://www.amazon.in/AVP-Nalpamaradi-Lightening-Brightens-Ayurveda/dp/B0B5DLQQ5T/ref=sr_1_26?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-26" },
+    { id: "Kumkumadi Gold Glow Face Oil", imgSrc: "https://m.media-amazon.com/images/I/51ApxvuvXJL._AC_UL480_FMwebp_QL65_.jpg", description: "TAC - The Ayurveda Co. Kumkumadi Gold Glow Face Oil/Tailam for Glowing Skin|100% Pure & Ayurvedic|Reduces Pigmentation, Spots & Fine Lines|Luxurious Formula Made with Highest Grade Saffron - 20Ml", price: 499, link: "https://www.amazon.in/TAC-Kumkumadi-Anti-Ageing-Pigmentation-Sandalwood/dp/B09RWL87BR/ref=sr_1_28?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-28" },
+    { id: "Auravedic Kumkumadi Oil", imgSrc: "https://m.media-amazon.com/images/I/71-InZvXzsL._AC_UL480_FMwebp_QL65_.jpg", description: "Auravedic Kumkumadi Oil for Face 100 Ml, Kumkumadi Tailam Face Oil for Glowing Skin, Dark Spot Corrector Face Serum Oil", price: 360, link: "https://www.amazon.in/Auravedic-Kumkumadi-Saffron-Brightening-Radiance/dp/B00YXTNFJC/ref=sr_1_33?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462612&sr=8-33&th=1" },
+    { id: "Nuskhe", imgSrc: "https://m.media-amazon.com/images/I/51653jYJEhL._AC_UL480_FMwebp_QL65_.jpg", description: "Nuskhe by Paras Ayurvedic Pigmentation Papaya Anti Blemish Cream for Pigmentation and Blemishes removal- 100 ML (Unisex Product, Suitable for all skin types)", price: 519, link: "https://www.amazon.in/Nuskhe-Paras-Ayurvedic-Pigmentation-Treatment/dp/B08QVM1PDQ/ref=sr_1_32?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-32" },
+    { id: "Khadi Natural Protein Hair Cream ", imgSrc: "https://m.media-amazon.com/images/I/51dwJtANzJL._AC_UL480_FMwebp_QL65_.jpg", description: "Khadi Natural Protein Hair Cream for Soft & Shiny Hair | Cream for Silky Hair | Natural Hair Cream for Dry Hair | Paraben & Silicone-Free | Suitable for All Hair Types| 150g", price: 146, link: "https://www.amazon.in/Khadi-Natural-Herbal-Protein-Cream/dp/B00REG0YR2/ref=sr_1_34?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic+products&qid=1742462612&sr=8-34" },
+    { id: "Dabur Giloy Neem Tulsi Juice ", imgSrc: "https://m.media-amazon.com/images/I/71vGTuBG46L._AC_UL480_FMwebp_QL65_.jpg", description: "Dabur Giloy Neem Tulsi Juice - 1L | Benefit of 3-in-1 Immunity Boosters| With Power of Giloy, Neem and Tulsi | Pure, Natural and 100% Ayurvedic Juice", price: 229, link: "https://amzn.in/d/ctQXRJz" },
+    { id: "KERALA ayurveda Myaxyl", imgSrc: "https://m.media-amazon.com/images/I/71iqAgdOcOL._AC_UL480_FMwebp_QL65_.jpg", description: "KERALA ayurveda Myaxyl Ayurvedic Pain Relief Oil 200 Ml | Powerful Dual Action Formula: Instant & Long-Term Pain Relief From Joint, Muscle & Back Pain, Sprains| Lemongrass-Eucalyptus Fragrance", price: 391, link: "https://amzn.in/d/irM64y4" },
+    { id: "Bite Turmeric Balm", imgSrc: "https://m.media-amazon.com/images/I/41pqL7w5OIL._AC_UL480_FMwebp_QL65_.jpg", description: "Mother Sparsh After Bite Turmeric Balm for Rashes And Mosquito Bites, 100% Ayurvedic, Gentle Skin Roll-On Formula, 25gm", price: 224, link: "https://www.amazon.in/Mother-Sparsh-Turmeric-Mosquito-Ayurvedic/dp/B07X12JGX2/ref=sr_1_40_f3_0o_fs_mod_primary_alm?dib=eyJ2IjoiMSJ9.6bcUZyAR242OVHscmVhfwd58dNfl72_mwAqYd2JDHwZRW_kk763SZKosla3-kAYm5zR_eQhhfEFg50T_t12xSa5EMgMHC0WYI4cU534g9fVclrZoRINnClgxumAB2-xCI_MPBPqCfXQ2gA7LxgcxPGzBdWCPEHsYn32XNa-bUs6IFGdPaDf5EeriC3SLR_tU2Z5jnbi8MrWQRtHFlavsFWqJmCwSsoTFk1VUBmK90CDduxaxi6h6fUBsTY8RWYP1upc-u1eB33I7H7vUR2xNX1AZuT0A4Bi41DGSHIDT0l2_3695s1SKJ8k02SFX17Lpmy24Mvo6J1ToZtgo6LXCsXZn30us9kBWHGqONzP3KWbuaP6d9LeApb9gKP4GvWI_OQSvsMJx4B2ohBPJsnxG5MAO5-QpL-N2QiZDM_1v6QogaJvDCEMeALV6rgMAo3pU._cqJn9Bwhwy83h52j-uGG7xmBRFPIOh5QnkeSbRqqH4&dib_tag=se&keywords=ayurvedic%2Bproducts&qid=1742462612&sbo=m6DjfpMzMLDmL8pSMKX8hw%3D%3D&sr=8-40&th=1" },
+    { id: "Uric Balance Juice", imgSrc: "https://m.media-amazon.com/images/I/81rNS17s+-L._AC_UL480_FMwebp_QL65_.jpg", description: "Roll over image to zoom inKRISHNA'S HERBAL & AYURVEDA Uric Balance Juice 1000 Ml | Balancing Uric Acid Naturally | Power Of Kutki, Adusa, Arand Mool & 6 More Herbs", price: 510, link: "https://amzn.in/d/4iqmY66" },
+    { id: "Havintha Natural Hair Shampoo", imgSrc: "https://m.media-amazon.com/images/I/81GgiS1oF-L._AC_UL480_FMwebp_QL65_.jpg", description: "Havintha Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Dana Powder For Men & Women, Totally Organic | Paraben And Sulphate Free Shampoo - 227gm (Pack of 1)", price: 251, link: "Havintha Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Dana Powder For Men & Women, Totally Organic | Paraben And Sulphate Free Shampoo - 227gm (Pack of 1)" },
+    { id: "Liver Re-Live Juice", imgSrc: "https://m.media-amazon.com/images/I/81WtRVqkYPL._AC_UL480_FMwebp_QL65_.jpg", description: "KRISHNA'S HERBAL & AYURVEDA Liver Re-Live Juice 1000 ml | Healthy Liver | Strengthens the digestive system | Goodness of 11 powerful herbs like Makoy, Harshringar, Daru Haridra | Sugar free Juice", price: 500, link: "https://amzn.in/d/fieIANA" },
+    { id: "Parachute Advansed Ayurvedic Coconut Hair Oil", imgSrc: "https://m.media-amazon.com/images/I/61qkszG588L._AC_UL480_FMwebp_QL65_.jpg", description: "Parachute Advansed Ayurvedic Coconut Hair Oil | For Hair Fall Control & Hair Growth | With Coconut & 25 Ayurvedic Herbs like Amla, Neem, Bhringraj, Brahmi, Methi etc | Clinically Proven to Reduce Hair Fall in 30 Days | 300ml", price: 181, link: "https://amzn.in/d/07xaPxa" },
+    { id: "Dr.Ortho Ayurvedic Pain Relief Oil", imgSrc: "https://m.media-amazon.com/images/I/61I-ghtBsyL._AC_UL480_FMwebp_QL65_.jpg", description: "Dr.Ortho Ayurvedic Pain Relief Oil - 100ml+20ml Extra (Pack Of 1)", price: 256, link: "https://amzn.in/d/1oSqqHM" },
+    { id: "Indulekha Bringha Ayurvedic Hair Oi", imgSrc: "https://m.media-amazon.com/images/I/61IxF1ljJHL._AC_UL480_FMwebp_QL65_.jpg", description: "Indulekha Bringha Ayurvedic Hair Oil 100 ml|| Hair Fall Control and Hair Growth with Bringharaj & Coconut Oil - Comb Applicator Bottle for Men & Women", price: 250, link: "https://amzn.in/d/1oe5c0q" },
+    { id: "Traya Hair Ras Tablets", imgSrc: "https://m.media-amazon.com/images/I/41KMLBmCHZL._AC_UL480_FMwebp_QL65_.jpg", description: "Traya Hair Ras Tablets for Women & Men, Ayurvedic Hair Herbs for Hair Fall Control and Growth, Contains Ashwagandha, Bhringraj, Shatavari (120 Tablets)", price: 499, link: "https://amzn.in/d/6fIQphC" },
+    { id: "VAIDYARATNAM Saraswatharishtam Liquid", imgSrc: "https://m.media-amazon.com/images/I/41jUjpdqVCL._AC_UL480_FMwebp_QL65_.jpg", description: "VAIDYARATNAM Saraswatharishtam Liquid With Gold Ayurvedic Products, 100 ml", price: 260, link: "https://amzn.in/d/gZzTO69" },
+    { id: "Kumkumadi Radiance Moisturising Face Cream", imgSrc: "https://m.media-amazon.com/images/I/61m026UJ3qL._AC_UL480_FMwebp_QL65_.jpg", description: "HERBS & GREENS Greens Ayurvedic Kumkumadi Radiance Moisturising Face Cream|Hydration, Glow & Skin Brightening|Pigmentation & Spots|Anti Aging Day & Night Face Moisturizer For Woman & Men, 50 Gm", price: 331, link: "https://amzn.in/d/b1U9PIr" },
+    { id: "Blue Nectar Pain Relief Massage Oil", imgSrc: "https://m.media-amazon.com/images/I/61ZbsWfbOvL._AC_UL480_FMwebp_QL65_.jpg", description: "Blue Nectar Pain Relief Massage Oil with Natural Clove, Cinnamon & Mahanarayan Oils | Ayurvedic Oil Products for Ortho Relief from Joint Pain, Back Pain and Knee & Muscle Pain (17 Herbs, 100 ml)", price: 545, link: "https://amzn.in/d/a3rTjj5" },
+    { id: "Charak Pharma Kofol Ayurvedic Cough Syrup", imgSrc: "https://m.media-amazon.com/images/I/51hxewercyL._AC_UL480_FMwebp_QL65_.jpg", description: "Charak Pharma Kofol Ayurvedic Cough Syrup With Goodness of Haridra, Sunthi, Bibhitaki, Yastimadhu, Vasa & Tulsi effective in Dry & wet cough - 200 ml (pack of 1)", price: 148, link: "https://amzn.in/d/3227SQz" },
+    { id: "Maharishi Ayurveda Triphala Tablets Maharishi Ayurveda", imgSrc: "https://m.media-amazon.com/images/I/71HCHwbDrPL._AC_UL480_FMwebp_QL65_.jpg", description: "Maharishi Ayurveda Triphala Tablets Maharishi Ayurveda 1000 MG | Supports Healthy Digestion | Improves Bowel Wellness| Relieves Constipation | Pure Herbs Used |100% Ayurvedic | 60 Tabs (Pack of 1)", price: 135, link: "https://amzn.in/d/9NomzY0" },
+    { id: "Blue Nectar Ayurvedic Herbal Compress Potli with Neem & Turmeric ", imgSrc: "https://m.media-amazon.com/images/I/61LwLdslp9L._AC_UL480_FMwebp_QL65_.jpg", description: "Blue Nectar Ayurvedic Herbal Compress Potli with Neem & Turmeric | Natural Pain Relief Ingredients for Joint Pain, Body Pain, Legs Pain and Back Pain Relief 175g", price: 565, link: "https://amzn.in/d/9EnXdbP" },
+    { id: "BoroPlus Ayurvedic Antiseptic Cream", imgSrc: "https://m.media-amazon.com/images/I/61vLYXg2iHL._AC_UL480_FMwebp_QL65_.jpg", description: "BoroPlus Ayurvedic Antiseptic Cream for Face, Hands & Body | Free from Parabens, Silicones & Animal Products | Enriched with 10 Super Herbs | 200 ML", price: 297, link: "https://amzn.in/d/aTIEsJe" },
+    { id: "TATSAT Kajal", imgSrc: "https://m.media-amazon.com/images/I/51doO3ClxyL._AC_UL480_FMwebp_QL65_.jpg", description: "TATSAT - WELLNESS THROUGH AYURVEDA -100% Natural Ayurvedic Herbal Lead Free Kajal With Chakshushya Herbs Stick | No Preservatives | No Chemicals | No Irritation |2.5Gm", price: 499, link: "https://amzn.in/d/hWlQbzG" },
+    { id: "Khadi Natural Amla & Reetha Hair Shampoo", imgSrc: "https://m.media-amazon.com/images/I/61sozKWkxoL._AC_UL480_FMwebp_QL65_.jpg", description: "Khadi Natural Amla & Reetha Hair Shampoo | Anti-Hair Fall Shampoo | Shampoo for Thick & Strong Hair | Ayurvedic Shampoo for Healthy Hair | Suitable for All Hair|210 ml", price: 160, link: "https://amzn.in/d/bUSaTfQ" },
+    { id: "Livronic® Ayurvedic Dual Kansa Wand massager", imgSrc: "https://m.media-amazon.com/images/I/51wFPeuM4UL._AC_UL480_FMwebp_QL65_.jpg", description: "Livronic® Ayurvedic Dual Kansa Wand massager | Both Side Bronze Cap - Ayurveda Face Yoga Beauty Tool - Facial,Neck & Under-eye Massage with Orginal Teal wood Handle (PACK OF 1)", price: 498, link: "https://amzn.in/d/2EYTVDu" },
+    { id: "Zingavita Power Up Shilajit", imgSrc: "https://m.media-amazon.com/images/I/61fv53GZzaL._AC_UL480_FMwebp_QL65_.jpg", description: "Zingavita Power Up Shilajit for Men with Swarn Bhasm | 100% Ayurvedic with 17 Herbs like Pure Original Shilajit/Shilajeet & Ashwagandha | For Stamina & Performance (60 Shilajit Gold Capsules)", price: 747, link: "https://amzn.in/d/hpmR559" },
+    { id: "SHESHA NATURALS", imgSrc: "https://m.media-amazon.com/images/I/61Mp+4OFh3L._AC_UL480_FMwebp_QL65_.jpg", description: "SHESHA NATURALS Ayurveda Red Sandalwood Skin Brightening & Night Repair Cream 50G", price: 595, link: "https://amzn.in/d/2gInjXp" },
+    { id: "ISOTINE PLUS EYE DROP", imgSrc: "https://m.media-amazon.com/images/I/51rT1cq9HlL._AC_UL480_FMwebp_QL65_.jpg", description: "ISOTINE PLUS EYE DROP Jagat Pharma Isotine Plus for Serious Problems with goodness of Ayurvedic herbs -Amla, Chandan, Ashwagandha & palash |100% Ayurvedic |1 Box (10ml X 6 eye drops) -AYUSH Certified", price: 599, link: "https://amzn.in/d/6mlfEaM" },
+    { id: "Dabur Vatika Ayurvedic Shampoo", imgSrc: "https://m.media-amazon.com/images/I/71EK3jV1puL._AC_UL480_FMwebp_QL65_.jpg", description: "Dabur Vatika Ayurvedic Shampoo - 640ml | Damage Therapy | With Power of 10 ingredients for solving 10 hair problems| No Parabens | For all hair types", price: 316, link: "https://amzn.in/d/6OUB82S" },
+    { id: "Auravedic Kumkumadi Gel Facial Moisturizer", imgSrc: "https://m.media-amazon.com/images/I/51PZfFKa1iL._AC_UL480_FMwebp_QL65_.jpg", description: "Auravedic Kumkumadi Gel Facial Moisturizer With Kumkumadi Oil For Face For Glowing Skin Pigmentation Dark Spots Moisturiser 100g Skin Brightening Gel", price: 360, link: "https://amzn.in/d/bKMURl6" },
+    { id: "Kerala Ayurveda Khadirarishta", imgSrc: "https://m.media-amazon.com/images/I/61a8xkx1jSL._AC_UL480_FMwebp_QL65_.jpg", description: "Kerala Ayurveda Khadirarishta 450ml | Herbal Blood Purifier | For Acne Relief | For Pimple Free Skin| Blood Purifier for Glowing Skin| 100% Ayurvedic | With Khadira, Devadaru, and Bakuchi|", price: 155, link: "https://amzn.in/d/4grUJui" },
+    { id: "Jiva Neem Tablet ", imgSrc: "https://m.media-amazon.com/images/I/715PZ2bBx3L._AC_UL960_FMwebp_QL65_.jpg", description: "Jiva Neem Tablet | 100% Ayurvedic Formulation Purifies Blood, Treats Urinary Disorders | Pacifies Pitta And Kapha Doshas | Promotes Healthy Skin - 120 Tablets (Pack of 2)", price: 333, link: "https://amzn.in/d/0ARBSLJ" },
+
+        ];
+
+        function displayProducts(filteredProducts) {
+            const productContainer = document.getElementById("product-container");
+            productContainer.innerHTML = "";
+
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement("div");
+                productCard.className = "w-full max-w-sm bg-gray-100 border border-gray-200 rounded-lg shadow-xl";
+                productCard.innerHTML = `
+                    <a href="${product.link}">
+                        
+                    </a>
+                    <div class="px-5 pb-5 py-4">
+                        <a href="${product.link}">
+                          <div class="h-80 w-80">
+                            <img class="aspect-square  h-80 w-80" src="${product.imgSrc}"/>
+                            </div>
+                            <h5 class="text-xl font-semibold tracking-tight text-black">${product.id}</h5>
+                        </a>
+                        <p class="text-gray-700">${product.description}</p>
+                        <div class="flex items-center justify-between mt-10">
+                            <span class="text-3xl font-bold text-black">$${product.price}</span>
+                            <a href="${product.link}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Buy Link</a>
+                        </div>
+                    </div>
+                `;
+                productContainer.appendChild(productCard);
+            });
+        }
+
+        function filterProducts() {
+            const searchValue = document.getElementById("search-box").value.toLowerCase();
+            let filteredProducts = products.filter(product => product.id.toLowerCase().includes(searchValue));
+
+            const priceFilter = document.getElementById("price-filter").value;
+            if (priceFilter === "low") {
+                filteredProducts.sort((a, b) => a.price - b.price);
+            } else if (priceFilter === "high") {
+                filteredProducts.sort((a, b) => b.price - a.price);
+            }
+
+            displayProducts(filteredProducts);
+        }
+
+        displayProducts(products);
+    </script>
+</body>
+</html>

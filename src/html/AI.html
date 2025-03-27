@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="w-screen overflow-hidden text-black h-screen bg-[url('/assets/aibg.png')] bg-cover bg-center">
+    <img class="w-screen" src="/assets/aibg.png" alt="">
+    <div class="absolute top-0">
+        
+        <nav class="flex space-between justify-between px-20 py-10">
+            <div class="font-bold font-sans text-3xl">PURE AAYU</div>
+            <div>
+                <div class="flex  ">
+                    <div class="flex h-8"><p class="text-xl mx-2 font-bold">AI</p><img src="/assets/ai.svg" alt=""></div>
+                <a href="index.html">                    <div class="flex h-4 "><p class="text-xl mx-2 font-bold">Back</p><img  src="/assets/arrow-left-solid.svg" alt=""></div>
+                </a>
+                </div>
+            </div>
+        </nav>
+
+
+        <div>
+            
+    
+    <div  class=" p-3 mx-10 mb-60 border rounded-xl backdrop-blur-2xl">
+        <div class="overflow-y-scroll p-4  h-[500px]" id="apiResponse">
+            <p class="text-xl">
+                Enter your prompt in the input field below and click the "Get Response" button to see the AI-generated response.    
+            </p>
+        </div>
+    </div>
+
+    <div class="w-screen flex justify-center">
+        <div class="fixed  bottom-10">
+            
+            <input class="border p-3 rounded-full w-96" type="text" id="userInput" placeholder="Enter your prompt (use Markdown)">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-full ml-2" onclick="fetchGeminiData()">Get Response</button>
+        </div>
+    </div>
+        </div>
+
+
+
+
+
+    </div>
+</body>
+<script>
+
+
+    async function fetchGeminiData() {
+    const userInput = document.getElementById('userInput').value;
+    const apiKey = 'AIzaSyAISLA9Q3pHS97KIIHPn9XV53eaFhgOsVc'; // Replace with your valid API key
+    const apiUrl = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`;
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contents: [{ role: "user", parts: [{ text: userInput }] }]
+            }),
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
+        }
+
+        const data = await response.json();
+
+        if (data?.candidates?.length > 0) {
+            const responseText = data.candidates[0].content.parts[0].text;
+            document.getElementById('apiResponse').innerHTML = marked.parse(responseText);
+        } else {
+            document.getElementById('apiResponse').textContent = 'No response from AI.';
+        }
+
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('apiResponse').textContent = `Error fetching data: ${error.message}`;
+    }
+}
+
+
+
+</script>
+</html>

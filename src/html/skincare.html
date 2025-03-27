@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/src/output.css" rel="stylesheet"> </head>
+<body class="w-screen bg-[#e8e7e7]">
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4"> -->
+        <div class="md:h-[500px] bg-cover  md:bg-[url('/assets/skincare.jpg')]">
+
+            
+            <nav class="bg-white md:mx-40 mx-10 h-20 flex rounded-b-3xl">
+                <div><img class="mx-6 my-4 md:h-10 h-8" src="/img/icon_ayu/New folder (2)/Logo (1).png" alt=""></div>
+                <ul class=" m-5  md:flex hidden">
+                  <a href="#"><li class="mr-10 font-normal text-lg  ">Home</li></a>
+                  <a href="/src/html/about.html"><li class="mr-10 font-normal text-lg  ">About</li></a>
+                  <a href="/src/html/Shop.html"><li class="mr-10 font-normal text-lg  ">Shop</li></a>
+                  <a href="/src/html/Diseases.html"><li class="mr-10 font-normal text-lg  ">Diseases</li></a>
+                  <a href="/src/html/contact.html"><li class="mr-10 font-normal text-lg  ">Contact</li></a>
+                  <a href="/src/html/AI.html"><li class="mr-10 font-normal text-lg  ">AI</li></a>
+                  
+                </ul>
+              </nav>
+              
+              <h1 class="text-white font-bold text-3xl absolute top-56 right-[650px]">SKIN CARE</h1>
+              <div>
+                
+    
+              </div>
+        </div>
+        
+        <h1 class=" block md:hidden text-center text-3xl m-4 font-bold">SKIN CARE</h1>
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="container" class="bg-white"></div>
+        </div>
+
+
+        <footer class="bg-[#1a0a06] text-white py-10 px-5 md:px-20">
+            <div class="max-w-7xl mx-auto">
+              <!-- Upper Section -->
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <!-- Subscription Form -->
+                <div class="mb-6 md:mb-0">
+                  <h2 class="text-lg font-semibold">Sign Up To Get Updates & News About Us..</h2>
+                  <div class="mt-3 flex">
+                    <input type="email" placeholder="Enter Your Email.." class="px-4 py-2 rounded-l-lg text-black w-60 md:w-80 focus:outline-none" />
+                    <button class="bg-[#b66d42] px-4 py-2 rounded-r-lg text-white font-semibold hover:bg-[#a45a35]">Subscribe</button>
+                  </div>
+                </div>
+          
+                <!-- Footer Info -->
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16 mt-6 md:mt-0">
+                  <!-- About -->
+                  <div>
+                    <h3 class="text-lg font-semibold flex items-center">
+                      <img src="your-logo-path.png" alt="Logo" class="h-6 w-6 mr-2">
+                      <span class="text-[#b66d42]">Pure Ayurveda</span>
+                    </h3>
+                    <p class="text-sm text-gray-400 mt-2">
+                      met minim mollit non deserunt ullamco est sit Velit officia consequat duis enim velit mollit. sunt nost
+                    </p>
+                  </div>
+          
+                  <!-- Useful Links -->
+                  <div>
+                    <h3 class="text-lg font-semibold">Useful Links</h3>
+                    <ul class="text-gray-400 mt-2 space-y-1">
+                      <li><a href="#" class="hover:text-[#b66d42]">Shipping Option</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">My Wishlist</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">My Account</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">Return Policy</a></li>
+                      <li><a href="#" class="hover:text-[#b66d42]">Shopping FAQs</a></li>
+                    </ul>
+                  </div>
+          
+                  <!-- Contact Info -->
+                  <div>
+                    <h3 class="text-lg font-semibold">Contact Info</h3>
+                    <ul class="text-gray-400 mt-2 space-y-1">
+                      <li class="flex items-center">
+                        <span class="mr-2">📍</span> 4517 Washington Ave. Manchester, 39495
+                      </li>
+                      <li class="flex items-center">
+                        <span class="mr-2">📞</span> (208) 555-0112
+                      </li>
+                      <li class="flex items-center">
+                        <span class="mr-2">📧</span> example@gmail.com
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Copyright -->
+              <div class="text-center text-gray-400 mt-8 border-t border-gray-700 pt-4">
+                Copyright &copy; 2024. All Rights Reserved. <span class="text-[#b66d42]">Pure Ayurveda</span>
+              </div>
+            </div>
+          </footer>
+</body>
+<script>
+    const data = [
+    {
+        title: "Acne (Yuvan Pidika)",
+        image: "./project image/project image/acne(yuvan pidika).png",
+        description: "Imbalance of Kapha and Pitta doshas leading to excessive sebum production and inflammation.",
+        prevention: "Use neem paste or neem oil to reduce bacterial infections. Apply turmeric paste mixed with honey to reduce inflammation. Avoid spicy, oily, and junk food. Eat cooling foods like cucumber and bitter gourd."
+    },
+    {
+        title: "Eczema (Vicharchika)",
+        image: "./project image/project image/vicharchika.png",
+        description: "Aggravation of Kapha and Pitta doshas leading to dryness and itching.",
+        prevention: "Use Khadirarishta (herbal decoction) to purify the blood. Apply coconut oil to soothe and moisturize the skin. Use water boiled with neem leaves for bathing."
+    },
+    {
+        title: "Psoriasis (Kitibha)",
+        image: "./project image/project image/kitibha.png",
+        description: "Imbalance of Vata and Kapha doshas leading to scaly, itchy patches.",
+        prevention: "Undergo Panchakarma Therapy (Vamana, Virechana, and Takradhara). Drink Manjistha decoction for blood purification. Apply Aloe Vera gel topically to soothe and heal."
+    },
+    {
+        title: "Rosacea",
+        image: "./project image/project image/rosacea.png",
+        description: "Aggravation of Pitta dosha leading to facial redness.",
+        prevention: "Apply sandalwood and rose water mixture for cooling. Consume or apply coriander juice to reduce inflammation. Avoid hot, spicy foods and alcohol."
+    },
+    {
+        title: "Hyperpigmentation (Vyanga)",
+        image: "./project image/project image/vyanga.png",
+        description: "Aggravated Pitta dosha causing melanin overproduction.",
+        prevention: "Apply paste of sandalwood and turmeric. Consume Amla regularly for natural skin lightening. Apply Aloe Vera gel to reduce dark spots."
+    },
+    {
+        title: "Melasma",
+        image: "./project image/project image/melasma.png",
+        description: "Hormonal imbalance and Pitta-Kapha imbalance.",
+        prevention: "Massage face with Kumkumadi Tailam. Use a paste of licorice root and milk. Eat antioxidant-rich foods like spinach and berries."
+    },
+    {
+        title: "Dry Skin (Ruksha Twacha)",
+        image: "./project image/project image/ruksha twacha.png",
+        description: "Aggravation of Vata dosha leading to loss of moisture.",
+        prevention: "Massage with warm sesame oil before bathing. Apply milk and honey pack to hydrate the skin. Include ghee and hydrating fruits like watermelon in your diet."
+    },
+    {
+        title: "Sunburn",
+        image: "./project image/project image/sunburn.png",
+        description: "Excess Pitta dosha due to overexposure to the sun.",
+        prevention: "Apply Aloe Vera gel to cool and soothe. Apply fresh cucumber juice to the affected area. Drink plenty of water and consume coconut water."
+    },
+    {
+        title: "Wrinkles (Twak Vaivarnya)",
+        image: "./project image/project image/wrinkles.png",
+        description: "Vata dosha imbalance leading to reduced collagen production.",
+        prevention: "Consume Ashwagandha and Gotu Kola for anti-aging benefits. Apply honey and banana mask to improve elasticity. Include nuts, seeds, and fresh fruits in your diet."
+    },
+    {
+        title: "Dark Circles (Kati Chhaya)",
+        image: "./project image/project image/dark_circles.png",
+        description: "Stress, lack of sleep, and Pitta imbalance.",
+        prevention: "Massage gently under the eyes with almond oil. Place cucumber slices on eyes for soothing. Eat iron-rich foods like spinach and dates."
+    },
+    {
+        title: "Vitiligo (Shwitra)",
+        image: "./project image/project image/vitiligo.png",
+        description: "Autoimmune condition and imbalance of Vata and Pitta doshas.",
+        prevention: "Apply Bakuchi Oil topically to affected areas. Consume Haritaki for detoxification. Avoid sour foods and include turmeric and ginger in your diet."
+    },
+        {
+        title: "Hives (Sheetapitta)",
+        image: "./project image/project image/hives.png",
+        description: "Aggravation of Kapha and Vata doshas.",
+        prevention: "Apply neem paste to reduce itching. Apply or consume coriander juice to reduce heat. Avoid cold and sour foods."
+    },
+        {
+        title: "Skin Allergies",
+        image: "./project image/project image/skin allergies.png",
+        description: "Aggravation of Pitta and Kapha doshas.",
+        prevention: "Use a paste of Tulsi leaves for external application. Consume Triphala powder for detox. Avoid allergens and eat light, sattvic meals."
+    },
+        {
+        title: "Burns (Dagdha Vrana)",
+        image: "./project image/project image/dagdha vrana.png",
+        description: "Agni (fire) imbalance.",
+        prevention: "Apply Aloe Vera gel to reduce inflammation and promote healing. Apply ghee for cooling and soothing. Consume cooling foods like cucumber."
+    },
+        {
+        title: "Boils (Pidika)",
+        image: "./project image/project image/pidika.png",
+        description: "Aggravation of Pitta and Kapha doshas.",
+        prevention: "Apply turmeric and honey paste to draw out pus and heal. Apply neem leaves paste to prevent infection. Avoid fried and oily foods."
+    },
+        {
+        title: "Fungal Infections (Dadru)",
+        image: "./project image/project image/dadru.png",
+        description: "Imbalance of Kapha and Pitta doshas, along with fungal growth.",
+        prevention: "Apply neem oil or paste to affected areas. Consume Manjistha decoction for blood purification. Avoid fermented and heavy foods. Include bitter vegetables like neem and karela."
+    },
+        {
+        title: "Dandruff-related Skin Issues",
+        image: "./project image/project image/dandruff related skin issues.png",
+        description: "Aggravation of Vata and Kapha doshas causing dryness and flakes.",
+        prevention: "Massage the scalp with Bhringraj oil. Soak fenugreek seeds overnight, grind into a paste, and apply to the scalp. Consume omega-rich foods and avoid excessive salt."
+    },
+        {
+        title: "Cellulitis",
+        image: "./project image/project image/cellulitis.png",
+        description: "Bacterial infection due to weakened immunity.",
+        prevention: "Drink warm turmeric milk to fight infection. Use water boiled with neem leaves to clean the skin. Include garlic, ginger, and other immunity-boosting foods."
+    },
+        {
+        title: "Stretch Marks",
+        image: "./project image/project image/stretch_marks.png",
+        description: "Skin elasticity loss due to rapid weight changes or pregnancy.",
+        prevention: "Mix and apply coconut oil and Aloe Vera gel daily to reduce marks. Massage with Kumkumadi Tailam to promote skin regeneration. Consume vitamin E-rich foods like almonds and sunflower seeds."
+    },
+        {
+        title: "Scars and Wounds (Vrana Shotha)",
+        image: "./project image/project image/vrana shotha.png",
+        description: "Poor healing due to Vata and Pitta imbalance.",
+        prevention: "Apply honey and turmeric paste to scars for lightening and healing. Consume Ashwagandha powder to improve collagen production. Include foods rich in zinc and protein."
+    },
+        {
+        title: "Lichen Planus",
+        image: "./project image/project image/lichen planus.png",
+        description: "Autoimmune condition linked to imbalances in all three doshas.",
+        prevention: "Apply neem and turmeric paste to affected areas. Take Triphala powder internally for detoxification. Avoid acidic and spicy foods."
+    },
+        {
+        title: "Pruritus (Kandu)",
+        image: "./project image/project image/kandu.png",
+        description: "Aggravation of Kapha and Pitta doshas leading to itching.",
+        prevention: "Apply coriander seed paste to relieve itching. Use neem water for bathing to soothe the skin. Avoid hot, sour, and salty foods."
+    },
+        {
+        title: "Skin Tags",
+        image: "./project image/project image/skin tags.png",
+        description: "Kapha imbalance causing excess skin growth.",
+        prevention: "Apply castor oil and baking soda paste to dry out tags. Consume Ashwagandha and neem decoction to balance Kapha dosha. Reduce sugar and processed foods."
+    },
+];
+
+const container = document.getElementById("container");
+container.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 md:m-20 m-4 gap-6 ";
+container.innerHTML = "";
+
+data.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "bg-white p-4 rounded-2xl";
+    
+    card.innerHTML = `
+        <div class=" p-4 rounded-2xl">
+            <div class="flex  ">
+                <img class="aspect-square h-40 w-40 mr-4 hover:scale-105 transition-all duration-100 ease-in-out rounded-2xl" src="${item.image}" alt="">
+                
+                    
+                   
+                    <div>
+<p class="text-2xl font-bold">Prevention</p>
+                <p>${item.prevention}</p>
+                        </div>
+
+                        
+                </div>
+            </div>
+            <div class="mt-4">
+                <h1 class="font-bold text-2xl">${item.title}</h1>
+                    <p>${item.description}</p>
+            </div>
+        </div>
+
+    `;
+    
+    container.appendChild(card);
+});
+</script>
+</html>
