@@ -26,8 +26,8 @@ jobs:
     - name: Build Tailwind CSS
       run: npm run build
 
-    - name: Copy index.html
-      run: cp index.html dist/
+    - name: Copy files
+      run: cp * dist/
 
     - name: Add custom domain
       run: echo 'pureayu.me' > dist/CNAME
