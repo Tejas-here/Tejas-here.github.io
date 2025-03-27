@@ -47,7 +47,7 @@ const loginUser = async (event) => {
         localStorage.setItem("isAuthenticated", "true");
 
         alert("Logged in successfully!");
-        window.location.href = "/src/html/index.html"; // Redirect to home page
+        window.location.href = "https://pureayu.me/src/html/index.html"; // Redirect to home page
     } catch (error) {
         alert("Error: " + error.message);
     }
@@ -71,7 +71,7 @@ const registerUser = async (event) => {
         localStorage.setItem("isAuthenticated", "true");
 
         alert("Account created successfully!");
-        window.location.href = "/src/html/index.html"; // Redirect to home page
+        window.location.href = "https://pureayu.me/src/html/index.html"; // Redirect to home page
     } catch (error) {
         alert("Error: " + error.message);
     }
@@ -86,7 +86,7 @@ const logoutUser = async () => {
         localStorage.removeItem("isAuthenticated");
 
         alert("Logged out!");
-        window.location.href = "/src/html/login.html"; // Redirect to login page
+        window.location.href = "https://pureayu.me/src/html/index.html"; // Redirect to login page
     } catch (error) {
         alert("Error: " + error.message);
     }
@@ -98,8 +98,8 @@ const handleAuthStateChange = (user) => {
         // User is logged in, redirect to home page
         localStorage.setItem("isAuthenticated", "true");
 
-        if (window.location.pathname !== "/src/html/index.html") {
-            window.location.href = "/src/html/index.html";
+        if (window.location.pathname !== "https://pureayu.me/src/html/index.html") {
+            window.location.href = "https://pureayu.me/src/html/index.html";
         }
     } else {
         // User is logged out, allow them to see login page
@@ -111,8 +111,8 @@ const handleAuthStateChange = (user) => {
 window.addEventListener("load", () => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
 
-    if (isAuthenticated === "true" && window.location.pathname !== "/src/html/index.html") {
-        window.location.href = "/src/html/index.html";
+    if (isAuthenticated === "true" && window.location.pathname !== "https://pureayu.me/src/html/index.html") {
+        window.location.href = "https://pureayu.me/src/html/index.html";
     }
 });
 
